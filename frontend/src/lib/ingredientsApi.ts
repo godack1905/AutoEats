@@ -13,25 +13,25 @@ export interface IngredientData {
 export const ingredientsApi = {
   // Buscar ingredientes
   search: async (query: string, lang: 'es' | 'en' = 'es') => {
-    const response = await api.get('/ingredients', { params: { query, lang } });
+    const response = await api.get('/api/ingredients', { params: { query, lang } });
     return response.data;
   },
 
   // Obtener todos los ingredientes
   getAll: async (lang: 'es' | 'en' = 'es') => {
-    const response = await api.get('/ingredients', { params: { lang } });
+    const response = await api.get('/api/ingredients', { params: { lang } });
     return response.data;
   },
 
   // Obtener por ID
   getById: async (id: string) => {
-    const response = await api.get(`/ingredients/${id}`);
+    const response = await api.get(`/api/ingredients/${id}`);
     return response.data;
   },
 
   // Obtener por categoría
   getByCategory: async (category: string) => {
-    const response = await api.get(`/ingredients/category/${category}`);
+    const response = await api.get(`/api/ingredients/category/${category}`);
     return response.data;
   },
 };

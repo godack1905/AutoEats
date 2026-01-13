@@ -45,42 +45,42 @@ export interface CreateRecipeData {
 export const recipesApi = {
   // Obtener todas las recetas
   getAll: async (params?: { search?: string; page?: number; limit?: number }) => {
-    const response = await api.get('/recipes', { params });
+    const response = await api.get('/api/recipes', { params });
     return response.data;
   },
 
   // Obtener receta por ID
   getById: async (id: string) => {
-    const response = await api.get(`/recipes/${id}`);
+    const response = await api.get(`/api//recipes/${id}`);
     return response.data;
   },
 
   // Crear receta
   create: async (data: CreateRecipeData) => {
-    const response = await api.post('/recipes', data);
+    const response = await api.post('/api//recipes', data);
     return response.data;
   },
 
   // Actualizar receta
   update: async (id: string, data: Partial<CreateRecipeData>): Promise<Recipe> => {
-    const response = await api.put(`/recipes/${id}`, data);
+    const response = await api.put(`/api//recipes/${id}`, data);
     return response.data;
   },
 
   // Eliminar receta
   delete: async (id: string): Promise<void> => {
-    await api.delete(`/recipes/${id}`);
+    await api.delete(`/api/recipes/${id}`);
   },
 
   // Alternar favorito
   toggleFavorite: async (id: string) => {
-    const response = await api.post(`/recipes/${id}/favorite`);
+    const response = await api.post(`/api/recipes/${id}/favorite`);
     return response.data;
   },
 
   // Obtener favoritos
   getFavorites: async () => {
-    const response = await api.get('/recipes/user/favorites');
+    const response = await api.get('/api/recipes/user/favorites');
     return response.data;
   },
 };

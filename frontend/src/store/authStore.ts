@@ -1,10 +1,11 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { authApi } from '../lib/authApi';
+import api from '../lib/api'; // Importa tu instancia de axios
 import toast from 'react-hot-toast';
 
 interface User {
-  id: string;  // ✅ Usa 'id' (sin guión bajo)
+  id: string;
   username: string;
   email: string;
 }
@@ -14,6 +15,7 @@ interface AuthState {
   token: string | null;
   isAuthenticated: boolean;
   loading: boolean;
+  initialLoading: boolean; // Para carga inicial
   error: string | null;
   
   // Actions
@@ -21,6 +23,7 @@ interface AuthState {
   register: (username: string, email: string, password: string) => Promise<void>;
   logout: () => void;
   clearError: () => void;
+  initializeAuth: () => Promise<void>; // Nuevo método
 }
 
 export const useAuthStore = create<AuthState>()(
@@ -30,28 +33,62 @@ export const useAuthStore = create<AuthState>()(
       token: null,
       isAuthenticated: false,
       loading: false,
+      initialLoading: true, // Empieza en true
       error: null,
+
+      initializeAuth: async () => {
+        const token = localStorage.getItem('token');
+        
+        if (!token) {
+          set({ initialLoading: false });
+          return;
+        }
+        
+        try {
+          // Configurar el token en axios
+          api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          
+          // Opcional: Hacer una petición para verificar el token
+          // const response = await api.get('/auth/verify');
+          // Si es exitoso, establecer el usuario
+          
+          set({ 
+            token,
+            isAuthenticated: true,
+            initialLoading: false 
+          });
+        } catch (error) {
+          // Token inválido, limpiar
+          localStorage.removeItem('token');
+          delete api.defaults.headers.common['Authorization'];
+          set({ 
+            token: null,
+            isAuthenticated: false,
+            initialLoading: false 
+          });
+        }
+      },
 
       login: async (email: string, password: string) => {
         set({ loading: true, error: null });
         try {
           const response = await authApi.login({ email, password });
           
-          // DEBUG: Verifica que el usuario tenga 'id'
-          console.log('🔐 Login response:', response);
-          console.log('👤 User from API:', response.user);
-          console.log('🆔 User ID (should be "id"):', response.user?.id);
+          // Guardar token en localStorage y configurar axios
+          localStorage.setItem('token', response.token);
+          api.defaults.headers.common['Authorization'] = `Bearer ${response.token}`;
           
           set({
             user: response.user,
             token: response.token,
             isAuthenticated: true,
             loading: false,
+            initialLoading: false,
           });
           toast.success('¡Inicio de sesión exitoso!');
         } catch (error: any) {
           const message = error.response?.data?.error || 'Error al iniciar sesión';
-          set({ error: message, loading: false });
+          set({ error: message, loading: false, initialLoading: false });
           toast.error(message);
         }
       },
@@ -70,6 +107,8 @@ export const useAuthStore = create<AuthState>()(
       },
 
       logout: () => {
+        localStorage.removeItem('token');
+        delete api.defaults.headers.common['Authorization'];
         set({
           user: null,
           token: null,
@@ -82,6 +121,12 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: 'auth-storage',
+      // Solo persistir estos campos
+      partialize: (state) => ({
+        user: state.user,
+        token: state.token,
+        isAuthenticated: state.isAuthenticated,
+      }),
     }
   )
 );
