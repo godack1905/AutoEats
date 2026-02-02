@@ -1,1841 +1,1678 @@
 [
   {
-    "id": "010001",
-    "categoria": "Vegetables",
-    "names": { "es": "Tomate", "en": "Tomato" },
+    "categoria": "vegetables",
+    "name": "tomato",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.2, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.3, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.2, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.3, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010002",
-    "categoria": "Vegetables",
-    "names": { "es": "Cebolla", "en": "Onion" },
+    "categoria": "vegetables",
+    "name": "onion",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.7, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.7, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010003",
-    "categoria": "Vegetables",
-    "names": { "es": "Ajo", "en": "Garlic" },
+    "categoria": "vegetables",
+    "name": "garlic",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Diente", "baseValue": 0.08, "baseUnit": "unit" },
-      { "name": "Cabeza", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "clove", "baseValue": 0.08, "baseUnit": "unit" },
+      { "name": "head", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010004",
-    "categoria": "Vegetables",
-    "names": { "es": "Pimiento rojo", "en": "Red bell pepper" },
+    "categoria": "vegetables",
+    "name": "red bell pepper",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Tira", "baseValue": 0.17, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.4, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "strip", "baseValue": 0.17, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.4, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010005",
-    "categoria": "Vegetables",
-    "names": { "es": "Pimiento verde", "en": "Green bell pepper" },
+    "categoria": "vegetables",
+    "name": "green bell pepper",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Tira", "baseValue": 0.17, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.4, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "strip", "baseValue": 0.17, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.4, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010006",
-    "categoria": "Vegetables",
-    "names": { "es": "Zanahoria", "en": "Carrot" },
+    "categoria": "vegetables",
+    "name": "carrot",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.6, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.5, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.6, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.5, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010007",
-    "categoria": "Vegetables",
-    "names": { "es": "Calabacín", "en": "Zucchini" },
+    "categoria": "vegetables",
+    "name": "zucchini",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.6, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.6, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.6, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.6, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010008",
-    "categoria": "Vegetables",
-    "names": { "es": "Berenjena", "en": "Eggplant" },
+    "categoria": "vegetables",
+    "name": "eggplant",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.11, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.6, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.4, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.11, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.6, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.4, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010009",
-    "categoria": "Vegetables",
-    "names": { "es": "Pepino", "en": "Cucumber" },
+    "categoria": "vegetables",
+    "name": "cucumber",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.05, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.7, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.05, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.7, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010010",
-    "categoria": "Vegetables",
-    "names": { "es": "Lechuga", "en": "Lettuce" },
+    "categoria": "vegetables",
+    "name": "lettuce",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Hoja", "baseValue": 0.05, "baseUnit": "unit" },
-      { "name": "Cogollo", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pieza", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "leaf", "baseValue": 0.05, "baseUnit": "unit" },
+      { "name": "head", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "piece", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010011",
-    "categoria": "Vegetables",
-    "names": { "es": "Espinacas", "en": "Spinach" },
+    "categoria": "vegetables",
+    "name": "spinach",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Manojo", "baseValue": 100, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 30, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "bunch", "baseValue": 100, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 30, "baseUnit": "g" }
     ]
   },
   {
-    "id": "010012",
-    "categoria": "Vegetables",
-    "names": { "es": "Acelgas", "en": "Swiss chard" },
+    "categoria": "vegetables",
+    "name": "swiss chard",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Manojo", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Hoja", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "bunch", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "010013",
-    "categoria": "Vegetables",
-    "names": { "es": "Brócoli", "en": "Broccoli" },
+    "categoria": "vegetables",
+    "name": "broccoli",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rama", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Cabeza pequeña", "baseValue": 0.6, "baseUnit": "unit" },
-      { "name": "Cabeza mediana", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "floret", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "smallHead", "baseValue": 0.6, "baseUnit": "unit" },
+      { "name": "bigHead", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010014",
-    "categoria": "Vegetables",
-    "names": { "es": "Coliflor", "en": "Cauliflower" },
+    "categoria": "vegetables",
+    "name": "cauliflower",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rama", "baseValue": 0.08, "baseUnit": "unit" },
-      { "name": "Cabeza pequeña", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Cabeza mediana", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "floret", "baseValue": 0.08, "baseUnit": "unit" },
+      { "name": "smallHead", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "bigHead", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010015",
-    "categoria": "Vegetables",
-    "names": { "es": "Calabaza", "en": "Pumpkin" },
+    "categoria": "vegetables",
+    "name": "pumpkin",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Trozo", "baseValue": 0.4, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.3, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "piece", "baseValue": 0.4, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.3, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010016",
-    "categoria": "Vegetables",
-    "names": { "es": "Puerro", "en": "Leek" },
+    "categoria": "vegetables",
+    "name": "leek",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010017",
-    "categoria": "Vegetables",
-    "names": { "es": "Apio", "en": "Celery" },
+    "categoria": "vegetables",
+    "name": "celery",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rama", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Tallo", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "stalk", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "stem", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010018",
-    "categoria": "Vegetables",
-    "names": { "es": "Rábano", "en": "Radish" },
+    "categoria": "vegetables",
+    "name": "radish",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010019",
-    "categoria": "Vegetables",
-    "names": { "es": "Remolacha", "en": "Beetroot" },
+    "categoria": "vegetables",
+    "name": "beetroot",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.7, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.7, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010020",
-    "categoria": "Vegetables",
-    "names": { "es": "Espárragos", "en": "Asparagus" },
+    "categoria": "vegetables",
+    "name": "asparagus",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Manojo", "baseValue": 12.5, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "bunch", "baseValue": 12.5, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010021",
-    "categoria": "Vegetables",
-    "names": { "es": "Alcachofa", "en": "Artichoke" },
+    "categoria": "vegetables",
+    "name": "artichoke",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Corazón", "baseValue": 0.33, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "heart", "baseValue": 0.33, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "010022",
-    "categoria": "Vegetables",
-    "names": { "es": "Patata", "en": "Potato" },
+    "categoria": "vegetables",
+    "name": "potato",
     "standardUnit": "kg",
     "allowedMeasures": [
-      { "name": "Kilogramos", "baseValue": 1, "baseUnit": "kg" },
-      { "name": "Gramos", "baseValue": 0.001, "baseUnit": "kg" },
-      { "name": "Pequeña", "baseValue": 0.100, "baseUnit": "kg" },
-      { "name": "Mediana", "baseValue": 0.200, "baseUnit": "kg" },
-      { "name": "Grande", "baseValue": 0.300, "baseUnit": "kg" }
+      { "name": "kg", "baseValue": 1, "baseUnit": "kg" },
+      { "name": "g", "baseValue": 0.001, "baseUnit": "kg" },
+      { "name": "small", "baseValue": 0.1, "baseUnit": "kg" },
+      { "name": "medium", "baseValue": 0.2, "baseUnit": "kg" },
+      { "name": "large", "baseValue": 0.3, "baseUnit": "kg" }
     ]
   },
   {
-    "id": "020001",
-    "categoria": "Legumes",
-    "names": { "es": "Garbanzos", "en": "Chickpeas" },
+    "categoria": "legumes",
+    "name": "chickpeas",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020002",
-    "categoria": "Legumes",
-    "names": { "es": "Lentejas", "en": "Lentils" },
+    "categoria": "legumes",
+    "name": "lentils",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020003",
-    "categoria": "Legumes",
-    "names": { "es": "Judías blancas", "en": "White beans" },
+    "categoria": "legumes",
+    "name": "white beans",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 60, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 60, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020004",
-    "categoria": "Legumes",
-    "names": { "es": "Judías pintas", "en": "Pinto beans" },
+    "categoria": "legumes",
+    "name": "pinto beans",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 60, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 60, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020005",
-    "categoria": "Legumes",
-    "names": { "es": "Soja", "en": "Soybeans" },
+    "categoria": "legumes",
+    "name": "soybeans",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 180, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 180, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020006",
-    "categoria": "Legumes",
-    "names": { "es": "Guisantes secos", "en": "Dried peas" },
+    "categoria": "legumes",
+    "name": "dried peas",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020007",
-    "categoria": "Legumes",
-    "names": { "es": "Habas secas", "en": "Dried fava beans" },
+    "categoria": "legumes",
+    "name": "dried fava beans",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "020008",
-    "categoria": "Legumes",
-    "names": { "es": "Judías Verdes", "en": "Green beans" },
+    "categoria": "legumes",
+    "name": "green beans",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 60, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 60, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030001",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Arroz", "en": "Rice" },
+    "categoria": "grains and cereals",
+    "name": "rice",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030002",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Trigo", "en": "Wheat" },
+    "categoria": "grains and cereals",
+    "name": "wheat",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030003",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Avena", "en": "Oats" },
+    "categoria": "grains and cereals",
+    "name": "oats",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030004",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Maíz", "en": "Corn" },
+    "categoria": "grains and cereals",
+    "name": "corn",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030005",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Quinua", "en": "Quinoa" },
+    "categoria": "grains and cereals",
+    "name": "quinoa",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 180, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 180, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030006",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Cebada", "en": "Barley" },
+    "categoria": "grains and cereals",
+    "name": "barley",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030007",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Centeno", "en": "Rye" },
+    "categoria": "grains and cereals",
+    "name": "rye",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030008",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Mijo", "en": "Millet" },
+    "categoria": "grains and cereals",
+    "name": "millet",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030009",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Harina de trigo", "en": "Wheat flour" },
+    "categoria": "grains and cereals",
+    "name": "wheat flour",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 120, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 120, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030010",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Harina de maíz", "en": "Corn flour" },
+    "categoria": "grains and cereals",
+    "name": "corn flour",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 120, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 120, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030011",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Pasta", "en": "Pasta" },
+    "categoria": "grains and cereals",
+    "name": "pasta",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 80, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 80, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "030012",
-    "categoria": "Grains and Cereals",
-    "names": { "es": "Fideos chinos", "en": "Chinese noodles" },
+    "categoria": "grains and cereals",
+    "name": "chinese noodles",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 80, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 80, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040001",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Leche", "en": "Milk" },
+    "categoria": "dairy and eggs",
+    "name": "milk",
     "standardUnit": "ml",
     "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" },
-      { "name": "Chorrito", "baseValue": 10, "baseUnit": "ml" }
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" },
+      { "name": "drizzle", "baseValue": 10, "baseUnit": "ml" }
     ]
   },
   {
-    "id": "040002",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Huevos", "en": "Eggs" },
+    "categoria": "dairy and eggs",
+    "name": "eggs",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Docena", "baseValue": 12, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "dozen", "baseValue": 12, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "040003",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Mantequilla", "en": "Butter" },
+    "categoria": "dairy and eggs",
+    "name": "butter",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Trozo", "baseValue": 25, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" },
+      { "name": "piece", "baseValue": 25, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040004",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Yogur natural", "en": "Plain yogurt" },
+    "categoria": "dairy and eggs",
+    "name": "plain yogurt",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "g" },
-      { "name": "Envase", "baseValue": 125, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "g" },
+      { "name": "container", "baseValue": 125, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040005",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Queso", "en": "Cheese" },
+    "categoria": "dairy and eggs",
+    "name": "cheese",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rodaja", "baseValue": 25, "baseUnit": "g" },
-      { "name": "Cucharada rallado", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Taza rallado", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 25, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040006",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Nata líquida", "en": "Liquid cream" },
+    "categoria": "dairy and eggs",
+    "name": "liquid cream",
     "standardUnit": "ml",
     "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Chorrito", "baseValue": 10, "baseUnit": "ml" }
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "drizzle", "baseValue": 10, "baseUnit": "ml" }
     ]
   },
   {
-    "id": "040007",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Requesón", "en": "Cottage cheese" },
+    "categoria": "dairy and eggs",
+    "name": "cottage cheese",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040007",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Crema de leche", "en": "Cream" },
+    "categoria": "dairy and eggs",
+    "name": "milk cream",
     "standardUnit": "ml",
     "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" }
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" }
     ]
   },
   {
-    "id": "040008",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Mozarella rayada", "en": "Shredded mozzarella" },
+    "categoria": "dairy and eggs",
+    "name": "shredded mozzarella",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040008",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Parmesano", "en": "Parmesan" },
+    "categoria": "dairy and eggs",
+    "name": "parmesan",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "040004",
-    "categoria": "Dairy and Eggs",
-    "names": { "es": "Yogur desnatado", "en": "Low-fat yogurt" },
+    "categoria": "dairy and eggs",
+    "name": "low-fat yogurt",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "g" },
-      { "name": "Envase", "baseValue": 125, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "g" },
+      { "name": "container", "baseValue": 125, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050001",
-    "categoria": "Meat",
-    "names": { "es": "Pechuga de Pollo", "en": "Chicken breast" },
+    "categoria": "meat",
+    "name": "chicken breast",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050002",
-    "categoria": "Meat",
-    "names": { "es": "Muslitos de Pollo", "en": "Chicken drumsticks" },
+    "categoria": "meat",
+    "name": "chicken drumsticks",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050003",
-    "categoria": "Meat",
-    "names": { "es": "Alitas de Pollo", "en": "Chicken wings" },
+    "categoria": "meat",
+    "name": "chicken wings",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050004",
-    "categoria": "Meat",
-    "names": { "es": "Pechuga de Pavo", "en": "Turkey breast" },
+    "categoria": "meat",
+    "name": "turkey breast",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050005",
-    "categoria": "Meat",
-    "names": { "es": "Lomo de cerdo", "en": "Pork" },
+    "categoria": "meat",
+    "name": "pork loin",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050006",
-    "categoria": "Meat",
-    "names": { "es": "Ternera", "en": "Veal" },
+    "categoria": "meat",
+    "name": "veal",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Chuleta", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Trozo", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "steack", "baseValue": 150, "baseUnit": "g" },
+      { "name": "chop", "baseValue": 200, "baseUnit": "g" },
+      { "name": "piece", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050007",
-    "categoria": "Meat",
-    "names": { "es": "Cordero", "en": "Lamb" },
+    "categoria": "meat",
+    "name": "lamb",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Chuleta", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 120, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "chop", "baseValue": 150, "baseUnit": "g" },
+      { "name": "steack", "baseValue": 120, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050008",
-    "categoria": "Meat",
-    "names": { "es": "Conejo", "en": "Rabbit" },
+    "categoria": "meat",
+    "name": "rabbit",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Pierna", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Trozo", "baseValue": 150, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "leg", "baseValue": 200, "baseUnit": "g" },
+      { "name": "piece", "baseValue": 150, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050009",
-    "categoria": "Meat",
-    "names": { "es": "Carne picada mixta", "en": "Mixed minced meat" },
+    "categoria": "meat",
+    "name": "mixed minced meat",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Bolita", "baseValue": 30, "baseUnit": "g" },
-      { "name": "Hamburguesa", "baseValue": 100, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 80, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "meatBall", "baseValue": 30, "baseUnit": "g" },
+      { "name": "burguer", "baseValue": 100, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 80, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050010",
-    "categoria": "Meat",
-    "names": { "es": "Carne picada vacuno", "en": "Beef minced meat" },
+    "categoria": "meat",
+    "name": "beef minced meat",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Bolita", "baseValue": 30, "baseUnit": "g" },
-      { "name": "Hamburguesa", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "meatBall", "baseValue": 30, "baseUnit": "g" },
+      { "name": "burguer", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050011",
-    "categoria": "Meat",
-    "names": { "es": "Carne picada cerdo", "en": "Pork minced meat" },
+    "categoria": "meat",
+    "name": "pork minced meat",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Bolita", "baseValue": 30, "baseUnit": "g" },
-      { "name": "Hamburguesa", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "meatBall", "baseValue": 30, "baseUnit": "g" },
+      { "name": "burguer", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050012",
-    "categoria": "Meat",
-    "names": { "es": "Bacon", "en": "Bacon" },
+    "categoria": "meat",
+    "name": "bacon",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050012",
-    "categoria": "Meat",
-    "names": { "es": "Jamon york", "en": "York Ham" },
+    "categoria": "meat",
+    "name": "york ham",
     "standardUnit": "packet",
     "allowedMeasures": [
-      { "name": "Paquete", "baseValue": 1, "baseUnit": "packet" },
-      { "name": "Loncha", "baseValue": 0.05, "baseUnit": "packet" }
+      { "name": "packet", "baseValue": 1, "baseUnit": "packet" },
+      { "name": "slice", "baseValue": 0.05, "baseUnit": "packet" }
     ]
   },
   {
-    "id": "050013",
-    "categoria": "Meat",
-    "names": { "es": "Carrilleras", "en": "" },
+    "categoria": "meat",
+    "name": "cheeks",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050014",
-    "categoria": "Meat",
-    "names": { "es": "Butifarra", "en": "" },
+    "categoria": "meat",
+    "name": "sausage",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
     ]
   },
   {
-    "id": "050015",
-    "categoria": "Meat",
-    "names": { "es": "Salchichas", "en": "Frankfurts" },
+    "categoria": "meat",
+    "name": "frankfurts",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Paquete", "baseValue": 10, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "packet", "baseValue": 10, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "060001",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Merluza", "en": "Hake" },
+    "categoria": "fish and seafood",
+    "name": "hake",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Rodaja", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "filet", "baseValue": 150, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060002",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Salmón", "en": "Salmon" },
+    "categoria": "fish and seafood",
+    "name": "salmon",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Rodaja", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Loncha", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "filet", "baseValue": 200, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 150, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060003",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Atún", "en": "Tuna" },
+    "categoria": "fish and seafood",
+    "name": "tuna",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Lata pequeña", "baseValue": 80, "baseUnit": "g" },
-      { "name": "Lata grande", "baseValue": 160, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "filet", "baseValue": 200, "baseUnit": "g" },
+      { "name": "smallCan", "baseValue": 80, "baseUnit": "g" },
+      { "name": "largeCan", "baseValue": 160, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060004",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Bacalao", "en": "Cod" },
+    "categoria": "fish and seafood",
+    "name": "cod",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Loncha", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "filet", "baseValue": 150, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060005",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Gambas", "en": "Shrimp" },
+    "categoria": "fish and seafood",
+    "name": "shrimp",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 10, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060006",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Mejillones", "en": "Mussels" },
+    "categoria": "fish and seafood",
+    "name": "mussels",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 15, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060007",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Calamar", "en": "Squid" },
+    "categoria": "fish and seafood",
+    "name": "squid",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 50, "baseUnit": "g" },
-      { "name": "Anilla", "baseValue": 20, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 50, "baseUnit": "g" },
+      { "name": "ring", "baseValue": 20, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060008",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Pulpo", "en": "Octopus" },
+    "categoria": "fish and seafood",
+    "name": "octopus",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Tentáculo", "baseValue": 100, "baseUnit": "g" },
-      { "name": "Rodaja", "baseValue": 50, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tentacle", "baseValue": 100, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 50, "baseUnit": "g" }
     ]
   },
   {
-    "id": "060009",
-    "categoria": "Fish and Seafood",
-    "names": { "es": "Panga", "en": "Panga" },
+    "categoria": "fish and seafood",
+    "name": "panga",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Filete", "baseValue": 150, "baseUnit": "g" },
-      { "name": "Loncha", "baseValue": 100, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "filet", "baseValue": 150, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 100, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070001",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Sal", "en": "Salt" },
+    "categoria": "spices and seasonings",
+    "name": "salt",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Pizca", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "pinch", "baseValue": 1, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070002",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Pimienta negra", "en": "Black pepper" },
+    "categoria": "spices and seasonings",
+    "name": "black pepper",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Pizca", "baseValue": 0.5, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Molida", "baseValue": 1, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "pinch", "baseValue": 0.5, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" },
+      { "name": "ground", "baseValue": 1, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070003",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Pimentón picante", "en": "Spicy paprika" },
+    "categoria": "spices and seasonings",
+    "name": "spicy paprika",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 8, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 8, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070004",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Comino", "en": "Cumin" },
+    "categoria": "spices and seasonings",
+    "name": "cumin",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070005",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Orégano", "en": "Oregano" },
+    "categoria": "spices and seasonings",
+    "name": "oregano",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 2, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 1, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 3, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 2, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070006",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Tomillo", "en": "Thyme" },
+    "categoria": "spices and seasonings",
+    "name": "thyme",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 1, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 1, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 1, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070007",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Romero", "en": "Rosemary" },
+    "categoria": "spices and seasonings",
+    "name": "rosemary",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 1, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 2, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 1, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070008",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Albahaca", "en": "Basil" },
+    "categoria": "spices and seasonings",
+    "name": "basil",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Hoja", "baseValue": 0.5, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Cucharadita seco", "baseValue": 1, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "leaf", "baseValue": 0.5, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 3, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 1, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070009",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Perejil", "en": "Parsley" },
+    "categoria": "spices and seasonings",
+    "name": "parsley",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharada picado", "baseValue": 5, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 2, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 5, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070010",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Cilantro", "en": "Coriander" },
+    "categoria": "spices and seasonings",
+    "name": "coriander",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharada picado", "baseValue": 5, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "spring", "baseValue": 2, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 5, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070011",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Canela", "en": "Cinnamon" },
+    "categoria": "spices and seasonings",
+    "name": "cinnamon",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rama", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "stick", "baseValue": 3, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070012",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Clavo", "en": "Clove" },
+    "categoria": "spices and seasonings",
+    "name": "clove",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 0.1, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 0.1, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070013",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Nuez moscada", "en": "Nutmeg" },
+    "categoria": "spices and seasonings",
+    "name": "nutmeg",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Ralladura", "baseValue": 0.5, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "grating", "baseValue": 0.5, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070014",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Cúrcuma", "en": "Turmeric" },
+    "categoria": "spices and seasonings",
+    "name": "turmeric",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 8, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 8, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070015",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Jengibre", "en": "Ginger" },
+    "categoria": "spices and seasonings",
+    "name": "ginger",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Rodaja", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Cucharadita rallado", "baseValue": 2, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "slice", "baseValue": 5, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070016",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Vainilla", "en": "Vanilla" },
+    "categoria": "spices and seasonings",
+    "name": "vanilla",
     "standardUnit": "ml",
     "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Vaina", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharadita esencia", "baseValue": 5, "baseUnit": "ml" }
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "bean", "baseValue": 2, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" }
     ]
   },
   {
-    "id": "070017",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Azafrán", "en": "Saffron" },
+    "categoria": "spices and seasonings",
+    "name": "saffron",
     "standardUnit": "g",
     "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Hilo", "baseValue": 0.01, "baseUnit": "g" },
-      { "name": "Pizca", "baseValue": 0.1, "baseUnit": "g" }
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "thread", "baseValue": 0.01, "baseUnit": "g" },
+      { "name": "pinch", "baseValue": 0.1, "baseUnit": "g" }
     ]
   },
   {
-    "id": "070018",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Laurel", "en": "Bay leaf" },
+    "categoria": "spices and seasonings",
+    "name": "bay leaf",
+    "standardUnit": "leaf",
+    "allowedMeasures": [
+      { "name": "leaf", "baseValue": 1, "baseUnit": "unit" }
+    ]
+  },
+  {
+    "categoria": "spices and seasonings",
+    "name": "tahini",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "pinch", "baseValue": 1, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "spices and seasonings",
+    "name": "sweet paprika",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 2, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 8, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "oils and fats",
+    "name": "olive oil",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "drizzle", "baseValue": 10, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" },
+      { "name": "thread", "baseValue": 5, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "oils and fats",
+    "name": "sunflower oil",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "drizzle", "baseValue": 10, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "oils and fats",
+    "name": "corn oil",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "drizzle", "baseValue": 10, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "oils and fats",
+    "name": "lard",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "piece", "baseValue": 25, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "oils and fats",
+    "name": "coconut oil",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "almonds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 1, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 30, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 150, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "walnuts",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "half", "baseValue": 2, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 5, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 40, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "hazelnuts",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 1, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 30, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "pine nuts",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 20, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "peanuts",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 1, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 40, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "sunflower seeds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 25, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "pumpkin seeds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 25, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "sesame seeds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "flax seeds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "nuts and seeds",
+    "name": "chia seeds",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "fruits",
+    "name": "lemon",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Gramos", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Hoja", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.08, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "070019",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Tahini", "en": "Tahini" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Pizca", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "070020",
-    "categoria": "Spices and Seasonings",
-    "names": { "es": "Pimentón dulce", "en": "Sweet paprika" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 8, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "080001",
-    "categoria": "Oils and Fats",
-    "names": { "es": "Aceite de oliva", "en": "Olive oil" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Chorrito", "baseValue": 10, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "ml" },
-      { "name": "Hilo", "baseValue": 5, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "080002",
-    "categoria": "Oils and Fats",
-    "names": { "es": "Aceite de girasol", "en": "Sunflower oil" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Chorrito", "baseValue": 10, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "080003",
-    "categoria": "Oils and Fats",
-    "names": { "es": "Aceite de maíz", "en": "Corn oil" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Chorrito", "baseValue": 10, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "080004",
-    "categoria": "Oils and Fats",
-    "names": { "es": "Manteca de cerdo", "en": "Lard" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Trozo", "baseValue": 25, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "080005",
-    "categoria": "Oils and Fats",
-    "names": { "es": "Aceite de coco", "en": "Coconut oil" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "090001",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Almendras", "en": "Almonds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 30, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 150, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090002",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Nueces", "en": "Walnuts" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Medio", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 40, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090003",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Avellanas", "en": "Hazelnuts" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 30, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090004",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Piñones", "en": "Pine nuts" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 20, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090005",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Cacahuetes", "en": "Peanuts" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 40, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090006",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Pipas de girasol", "en": "Sunflower seeds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 25, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090007",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Pipas de calabaza", "en": "Pumpkin seeds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 25, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090008",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Sésamo", "en": "Sesame seeds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090009",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Linaza", "en": "Flax seeds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "090010",
-    "categoria": "Nuts and Seeds",
-    "names": { "es": "Chía", "en": "Chia seeds" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "100001",
-    "categoria": "Fruits",
-    "names": { "es": "Limón", "en": "Lemon" },
+    "categoria": "fruits",
+    "name": "orange",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.08, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "segment", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.75, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.5, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100002",
-    "categoria": "Fruits",
-    "names": { "es": "Naranja", "en": "Orange" },
+    "categoria": "fruits",
+    "name": "apple",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Gajo", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.75, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.5, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.11, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.4, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100003",
-    "categoria": "Fruits",
-    "names": { "es": "Manzana", "en": "Apple" },
+    "categoria": "fruits",
+    "name": "banana",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.11, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.4, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.3, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100004",
-    "categoria": "Fruits",
-    "names": { "es": "Plátano", "en": "Banana" },
+    "categoria": "fruits",
+    "name": "pear",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.3, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.11, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.4, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100005",
-    "categoria": "Fruits",
-    "names": { "es": "Pera", "en": "Pear" },
+    "categoria": "fruits",
+    "name": "grape",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 5, "baseUnit": "g" },
+      { "name": "smallBunch", "baseValue": 200, "baseUnit": "g" },
+      { "name": "largeBunch", "baseValue": 500, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "fruits",
+    "name": "peach",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.11, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.4, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.8, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.3, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100006",
-    "categoria": "Fruits",
-    "names": { "es": "Uva", "en": "Grape" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Racimo pequeño", "baseValue": 200, "baseUnit": "g" },
-      { "name": "Racimo grande", "baseValue": 500, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "100007",
-    "categoria": "Fruits",
-    "names": { "es": "Melocotón", "en": "Peach" },
+    "categoria": "fruits",
+    "name": "apricot",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.8, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.3, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "half", "baseValue": 0.5, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100008",
-    "categoria": "Fruits",
-    "names": { "es": "Albaricoque", "en": "Apricot" },
+    "categoria": "fruits",
+    "name": "plum",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Medio", "baseValue": 0.5, "baseUnit": "unit" },
-      { "name": "Pequeño", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediano", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "small", "baseValue": 0.7, "baseUnit": "unit" },
+      { "name": "medium", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "large", "baseValue": 1.3, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100009",
-    "categoria": "Fruits",
-    "names": { "es": "Ciruela", "en": "Plum" },
+    "categoria": "fruits",
+    "name": "strawberry",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 15, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 100, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "fruits",
+    "name": "watermelon",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Pequeña", "baseValue": 0.7, "baseUnit": "unit" },
-      { "name": "Mediana", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Grande", "baseValue": 1.3, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.1, "baseUnit": "unit" },
+      { "name": "piece", "baseValue": 0.07, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100010",
-    "categoria": "Fruits",
-    "names": { "es": "Fresa", "en": "Strawberry" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 100, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "100011",
-    "categoria": "Fruits",
-    "names": { "es": "Sandía", "en": "Watermelon" },
+    "categoria": "fruits",
+    "name": "melon",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.1, "baseUnit": "unit" },
-      { "name": "Trozo", "baseValue": 0.07, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "slice", "baseValue": 0.125, "baseUnit": "unit" },
+      { "name": "piece", "baseValue": 0.08, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "100012",
-    "categoria": "Fruits",
-    "names": { "es": "Melón", "en": "Melon" },
+    "categoria": "liquids and beverages",
+    "name": "water",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "splash", "baseValue": 50, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "white wine",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 100, "baseUnit": "ml" },
+      { "name": "whineGlass", "baseValue": 150, "baseUnit": "ml" },
+      { "name": "splash", "baseValue": 50, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "red wine",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 100, "baseUnit": "ml" },
+      { "name": "whineGlass", "baseValue": 150, "baseUnit": "ml" },
+      { "name": "splash", "baseValue": 50, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "vinegar",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" },
+      { "name": "splash", "baseValue": 10, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "apple cider vinegar",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "chicken broth",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "vegetable broth",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "fish broth",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "beer",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" },
+      { "name": "bottle", "baseValue": 330, "baseUnit": "ml" },
+      { "name": "smallCan", "baseValue": 330, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "brandy",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "shot", "baseValue": 30, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 50, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "liquids and beverages",
+    "name": "orange juice",
+    "standardUnit": "ml",
+    "allowedMeasures": [
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "glass", "baseValue": 200, "baseUnit": "ml" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "ml" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "sugar",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 200, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "honey",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "ml", "baseValue": 1.4, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1400, "baseUnit": "ml" },
+      { "name": "teaspoon", "baseValue": 7, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 21, "baseUnit": "g" },
+      { "name": "thread", "baseValue": 10, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "yeast",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "packet", "baseValue": 7, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "baking soda",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" },
+      { "name": "pinch", "baseValue": 1, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "gelatin",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "leaf", "baseValue": 2, "baseUnit": "g" },
+      { "name": "packet", "baseValue": 10, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "cocoa powder",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 10, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 3, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "fried tomato sauce",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "ml", "baseValue": 1, "baseUnit": "ml" },
+      { "name": "l", "baseValue": 1000, "baseUnit": "ml" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" },
+      { "name": "cup", "baseValue": 250, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "tomato paste",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 20, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 7, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "olives",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "unit", "baseValue": 3, "baseUnit": "g" },
+      { "name": "handfull", "baseValue": 30, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "capers",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "teaspoon", "baseValue": 5, "baseUnit": "g" },
+      { "name": "tablespoon", "baseValue": 15, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "bread crumbs",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "chopped tomato",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "mushrooms",
+    "standardUnit": "g",
+    "allowedMeasures": [
+      { "name": "g", "baseValue": 1, "baseUnit": "g" },
+      { "name": "kg", "baseValue": 1000, "baseUnit": "g" },
+      { "name": "tray", "baseValue": 200, "baseUnit": "g" }
+    ]
+  },
+  {
+    "categoria": "other",
+    "name": "bread",
     "standardUnit": "unit",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Rodaja", "baseValue": 0.125, "baseUnit": "unit" },
-      { "name": "Trozo", "baseValue": 0.08, "baseUnit": "unit" }
+      { "name": "loaf", "baseValue": 1, "baseUnit": "unit" },
+      { "name": "dietToast", "baseValue": 0.2, "baseUnit": "unit" }
     ]
   },
   {
-    "id": "110001",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Agua", "en": "Water" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Chorro", "baseValue": 50, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110002",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Vino blanco", "en": "White wine" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 100, "baseUnit": "ml" },
-      { "name": "Copa", "baseValue": 150, "baseUnit": "ml" },
-      { "name": "Chorro", "baseValue": 50, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110003",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Vino tinto", "en": "Red wine" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 100, "baseUnit": "ml" },
-      { "name": "Copa", "baseValue": 150, "baseUnit": "ml" },
-      { "name": "Chorro", "baseValue": 50, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110004",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Vinagre", "en": "Vinegar" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "ml" },
-      { "name": "Chorro", "baseValue": 10, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110005",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Vinagre de manzana", "en": "Apple cider vinegar" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110006",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Caldo de pollo", "en": "Chicken broth" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110007",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Caldo de verduras", "en": "Vegetable broth" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110008",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Caldo de pescado", "en": "Fish broth" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110009",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Cerveza", "en": "Beer" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" },
-      { "name": "Botella", "baseValue": 330, "baseUnit": "ml" },
-      { "name": "Lata", "baseValue": 330, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110010",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Brandy", "en": "Brandy" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Chupito", "baseValue": 30, "baseUnit": "ml" },
-      { "name": "Copa", "baseValue": 50, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "110011",
-    "categoria": "Liquids and Beverages",
-    "names": { "es": "Zumo de naranja", "en": "Orange juice" },
-    "standardUnit": "ml",
-    "allowedMeasures": [
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Vaso", "baseValue": 200, "baseUnit": "ml" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "ml" }
-    ]
-  },
-  {
-    "id": "120001",
-    "categoria": "Other",
-    "names": { "es": "Azúcar", "en": "Sugar" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 200, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120002",
-    "categoria": "Other",
-    "names": { "es": "Miel", "en": "Honey" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Mililitros", "baseValue": 1.4, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1400, "baseUnit": "ml" },
-      { "name": "Cucharadita", "baseValue": 7, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 21, "baseUnit": "g" },
-      { "name": "Hilo", "baseValue": 10, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120003",
-    "categoria": "Other",
-    "names": { "es": "Levadura", "en": "Yeast" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Sobre", "baseValue": 7, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120004",
-    "categoria": "Other",
-    "names": { "es": "Bicarbonato", "en": "Baking soda" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Pizca", "baseValue": 1, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120005",
-    "categoria": "Other",
-    "names": { "es": "Gelatina", "en": "Gelatin" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Hoja", "baseValue": 2, "baseUnit": "g" },
-      { "name": "Sobre", "baseValue": 10, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120006",
-    "categoria": "Other",
-    "names": { "es": "Cacao en polvo", "en": "Cocoa powder" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 10, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 3, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120007",
-    "categoria": "Other",
-    "names": { "es": "Tomate frito", "en": "Fried tomato sauce" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Mililitros", "baseValue": 1, "baseUnit": "ml" },
-      { "name": "Litros", "baseValue": 1000, "baseUnit": "ml" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" },
-      { "name": "Taza", "baseValue": 250, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120008",
-    "categoria": "Other",
-    "names": { "es": "Tomate concentrado", "en": "Tomato paste" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 20, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 7, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120009",
-    "categoria": "Other",
-    "names": { "es": "Aceitunas", "en": "Olives" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Unidad", "baseValue": 3, "baseUnit": "g" },
-      { "name": "Puñado", "baseValue": 30, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120010",
-    "categoria": "Other",
-    "names": { "es": "Alcaparras", "en": "Capers" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Cucharadita", "baseValue": 5, "baseUnit": "g" },
-      { "name": "Cucharada", "baseValue": 15, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120011",
-    "categoria": "Other",
-    "names": { "es": "Baguette", "en": "Bread" },
-    "standardUnit": "unit",
-    "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 1, "baseUnit": "unit" }
-    ]
-  },
-  {
-    "id": "120012",
-    "categoria": "Other",
-    "names": { "es": "Pan rallado", "en": "Bread crumbs" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120013",
-    "categoria": "Other",
-    "names": { "es": "Tomate triturado", "en": "Chopped tomato" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120013",
-    "categoria": "Mushrooms",
-    "names": { "es": "Champiñones", "en": "Mushrooms" },
-    "standardUnit": "g",
-    "allowedMeasures": [
-      { "name": "Gramos", "baseValue": 1, "baseUnit": "g" },
-      { "name": "Kilogramos", "baseValue": 1000, "baseUnit": "g" },
-      { "name": "Bandeja", "baseValue": 200, "baseUnit": "g" }
-    ]
-  },
-  {
-    "id": "120013",
-    "categoria": "Other",
-    "names": { "es": "Pan", "en": "Bread" },
-    "standardUnit": "unit",
-    "allowedMeasures": [
-      { "name": "Baguette", "baseValue": 1, "baseUnit": "unit" },
-      { "name": "Tostada Dieta (50g)", "baseValue": 0.2, "baseUnit": "unit"}
-    ]
-  },
-  {
-    "id": "120014",
-    "categoria": "Other",
-    "names": { "es": "Tostadas", "en": "Toast" },
+    "categoria": "other",
+    "name": "toast",
     "standardUnit": "packet",
     "allowedMeasures": [
-      { "name": "Unidad", "baseValue": 0.125, "baseUnit": "unit" },
-      { "name": "Paquete", "baseValue": 1, "baseUnit": "unit" }
+      { "name": "unit", "baseValue": 0.125, "baseUnit": "unit" },
+      { "name": "packet", "baseValue": 1, "baseUnit": "unit" }
     ]
   }
 ]

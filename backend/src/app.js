@@ -17,8 +17,6 @@ const allowedHostnames = (process.env.CORS_HOSTNAMES || '')
   .map(h => h.trim())
   .filter(Boolean);
 
-console.log('CORS HOSTNAMES:', allowedHostnames);
-
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);

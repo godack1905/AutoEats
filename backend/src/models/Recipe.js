@@ -22,22 +22,6 @@ const IngredientSchema = new mongoose.Schema(
     displayQuantity: {
       type: String,
       default: ""
-    },
-    displayUnit: {
-      type: String,
-      default: ""
-    },
-    isAbstract: {
-      type: Boolean,
-      default: false
-    },
-    abstractMeasure: {
-      type: String,
-      default: null
-    },
-    estimatedValue: {
-      type: Number,
-      default: 0
     }
   },
   { id: false }

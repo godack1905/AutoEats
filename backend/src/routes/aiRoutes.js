@@ -445,7 +445,6 @@ function validateBatchPlan(plan, recipes, selectedMealTypes) {
     );
     
     if (!hasAllMeals) {
-      console.log(`⚠️ ${dateStr}: Faltan tipos de comida`);
       return;
     }
     
@@ -468,26 +467,14 @@ function validateBatchPlan(plan, recipes, selectedMealTypes) {
         const recipe = recipeMap[item.recipeId];
         const tags = (recipe.tags || []).map(t => t.toLowerCase());
         
-        // Validar tags según el tipo de comida
-        if (mealType === 'breakfast' && !tags.includes('desayuno')) {
-          console.log(`⚠️ ${dateStr} breakfast: Receta ${recipe.id} no tiene tag 'desayuno'`);
-          // No invalidamos, solo advertimos
-        }
-        
         if (mealType === 'lunch' || mealType === 'dinner') {
-          // Verificar estructura de plato único vs primer+segundo
-          if (items.length === 1 && !tags.includes('plato único')) {
-            console.log(`⚠️ ${dateStr} ${mealType}: Plato único debería tener tag 'plato único'`);
-          }
+          
           
           if (items.length === 2) {
             const isFirstPlate = tags.includes('primer plato') || tags.includes('entrante');
             const isSecondPlate = tags.includes('segundo plato');
             const isUnique = tags.includes('plato único');
             
-            if (isUnique) {
-              console.log(`⚠️ ${dateStr} ${mealType}: Plato único no debe combinarse con otros`);
-            }
           }
         }
         
@@ -508,7 +495,6 @@ function validateBatchPlan(plan, recipes, selectedMealTypes) {
       // Validar estructura para lunch/dinner
       if (mealType === 'lunch' || mealType === 'dinner') {
         if (validItems.length !== 1 && validItems.length !== 2) {
-          console.log(`⚠️ ${dateStr} ${mealType}: Debe tener 1 o 2 recetas, tiene ${validItems.length}`);
           isValidDay = false;
           return;
         }
@@ -523,14 +509,12 @@ function validateBatchPlan(plan, recipes, selectedMealTypes) {
     }
   });
   
-  console.log(`📊 Lote validado: ${validDays} días correctos`);
   return validDays > 0 ? validPlan : null;
 }
 
 // VALIDACIÓN COMPLETA FINAL
 function validateCompletePlan(plan, recipes, selectedMealTypes, expectedDays) {
   if (!plan || Object.keys(plan).length !== expectedDays) {
-    console.log(`❌ Plan incompleto: esperados ${expectedDays} días, obtenidos ${Object.keys(plan).length}`);
     return null;
   }
   
@@ -552,7 +536,6 @@ function validateCompletePlan(plan, recipes, selectedMealTypes, expectedDays) {
       const items = dayPlan[mealType];
       
       if (!items || !Array.isArray(items)) {
-        console.log(`⚠️ ${dateStr}: ${mealType} no es array`);
         issues++;
         // Crear array vacío para reparar
         finalPlan[dateStr][mealType] = [];
@@ -593,13 +576,11 @@ function validateCompletePlan(plan, recipes, selectedMealTypes, expectedDays) {
       });
       
       if (validItems.length === 0) {
-        console.log(`⚠️ ${dateStr}: ${mealType} sin recetas válidas`);
         issues++;
         finalPlan[dateStr][mealType] = [];
       } else {
         // Para lunch/dinner: reparar estructura si es necesario
         if ((mealType === 'lunch' || mealType === 'dinner') && validItems.length > 2) {
-          console.log(`🔧 ${dateStr}: ${mealType} tiene ${validItems.length} recetas, reduciendo a 2`);
           validItems.splice(2); // Mantener solo las primeras 2
         }
         
@@ -609,11 +590,9 @@ function validateCompletePlan(plan, recipes, selectedMealTypes, expectedDays) {
   });
   
   if (issues > expectedDays * 3) {
-    console.log(`❌ Demasiados problemas: ${issues} issues`);
     return null;
   }
   
-  console.log(`✅ Plan final validado: ${Object.keys(finalPlan).length} días, ${issues} issues reparados`);
   return finalPlan;
 }
 
@@ -651,7 +630,6 @@ function cleanGroqResponse(text) {
 
 // ALGORITMO INTELIGENTE (sin IA) - OPTIMIZADO CON TAGS
 function generateSmartAlgorithmPlan(recipes, preferences, selectedMealTypes) {
-  console.log('🧠 Usando algoritmo inteligente mejorado...');
   
   const plan = {};
   const today = new Date();
@@ -762,7 +740,6 @@ function generateSmartAlgorithmPlan(recipes, preferences, selectedMealTypes) {
     });
   }
   
-  console.log('📊 Plan algoritmo:', Object.keys(plan).length, 'días');
   return plan;
 }
 
