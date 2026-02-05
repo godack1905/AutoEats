@@ -15,52 +15,17 @@ const __dirname = path.dirname(__filename);
 const ingredientsPath = path.join(__dirname, "../data/ingredients.json");
 const ingredientsData = JSON.parse(fs.readFileSync(ingredientsPath, "utf-8"));
 
-// Function to get ingredient ID by name and validate unit
-const getIngredientId = (identifier, unit) => {
-
-  ingredient = ingredientsData.find(
-    i =>
-      i.names.es.toLowerCase() === identifier.toLowerCase() ||
-      i.names.en.toLowerCase() === identifier.toLowerCase()
-  );
-
-  if (!ingredient) {
-    throw new Error(`Ingrediente no encontrado: ${identifier}`);
-  }
-
-  // Validar unidad permitida si se proporciona y no es medida abstracta
-  if (unit && !ingredient.allowedUnits.includes(unit)) {
-    throw new Error(
-      `Unidad '${unit}' no permitida para ${ingredient.names.es}. Unidades permitidas: ${ingredient.allowedUnits.join(
-        ", "
-      )}`
-    );
-  }
-
-  return ingredient.id;
-};
-
 // Function to process ingredients list
 const processIngredients = (ingredients) => {
   return ingredients.map((ing) => {
-    let ingredientId;
-    
-    // Si es medida abstracta, obtener la unidad base
+    let name = ing.ingredient;
     let finalUnit = ing.unit;
     let finalQuantity = ing.quantity;
     let displayQuantity = ing.displayQuantity || ing.quantity.toString();
     let displayUnit = ing.displayUnit || ing.unit;
     
-    // Try to get ingredient ID with provided unit
-    try {
-      ingredientId = getIngredientId(ing.ingredient, finalUnit);
-    } catch (error) {
-      // If fails get ID without unit
-      ingredientId = getIngredientId(ing.ingredient, null);
-    }
-    
     return {
-      ingredient: ingredientId,
+      ingredient: name,
       quantity: finalQuantity,
       unit: finalUnit,
       displayQuantity: displayQuantity,
@@ -137,9 +102,9 @@ export const getRecipeById = async (req, res) => {
     const recipeObj = recipe.toObject ? recipe.toObject() : recipe;
     if (Array.isArray(recipeObj.ingredients)) {
       recipeObj.ingredients = recipeObj.ingredients.map((ing) => {
-        const ingData = ingredientsData.find(i => i.id === ing.ingredient);
-        const name = ingData ? (ingData.names && (ingData.names.es || ingData.names.en)) : null;
-        const category = ingData ? (ingData.category || 'Sin categoría') : null;
+        const ingData = ingredientsData.find(i => i.name === ing.ingredient);
+        const name = ingData ? ingData.name : null;
+        const category = ingData ? ingData.category : null;
 
         return {
           ingredient: ing.ingredient,
@@ -147,12 +112,8 @@ export const getRecipeById = async (req, res) => {
           category,
           quantity: ing.quantity,
           unit: ing.unit,
-          // Campos extendidos
           displayQuantity: ing.displayQuantity || ing.quantity.toString(),
-          displayUnit: ing.displayUnit || ing.unit,
-          isAbstract: ing.isAbstract || false,
-          abstractMeasure: ing.abstractMeasure || null,
-          estimatedValue: ing.estimatedValue || ing.quantity
+          displayUnit: ing.displayUnit || ing.unit
         };
       });
     }
@@ -167,7 +128,7 @@ export const getRecipeById = async (req, res) => {
   }
 };
 
-export const updateRecipe = async (req, res) => {
+export const updateRecipe = async (req, res, next) => {
   try {
     const recipe = await Recipe.findById(req.params.id);
     if (!recipe) {
@@ -178,7 +139,6 @@ export const updateRecipe = async (req, res) => {
       throwApiError(403, MESSAGE_CODES.AUTH_UNAUTHORIZED);
     }
 
-    // If ingredients are being updated, process them
     if (req.body.ingredients) {
       req.body.ingredients = processIngredients(req.body.ingredients);
     }
@@ -186,7 +146,11 @@ export const updateRecipe = async (req, res) => {
     Object.assign(recipe, req.body);
     await recipe.save();
 
-    return sendSuccess(res, MESSAGE_CODES.RECIPE_UPDATED, recipe);
+    // Hacer populate antes de devolver
+    const populatedRecipe = await Recipe.findById(recipe._id)
+      .populate("createdBy", "_id username email");
+
+    return sendSuccess(res, MESSAGE_CODES.RECIPE_UPDATED, populatedRecipe);
   } catch (err) {
     if (err instanceof ApiError) 
       return next(err);

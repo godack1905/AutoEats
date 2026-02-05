@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ChefHat, LogOut, User, Menu, X } from 'lucide-react';
 import { useAuthStore } from '../../store/authStore';
+import { t } from 'i18next';
 
 const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSidebar }) => {
   const { user, logout } = useAuthStore();
@@ -19,7 +20,7 @@ const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSidebar })
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <ChefHat className="h-8 w-8 text-blue-600" />
-          <span className="text-2xl font-bold text-gray-800">Recipe Manager</span>
+          <span className="text-2xl font-bold text-gray-800">{t("title")}</span>
         </Link>
 
         {/* Desktop User Info */}
@@ -35,7 +36,7 @@ const Header: React.FC<{ onToggleSidebar?: () => void }> = ({ onToggleSidebar })
                 className="flex items-center space-x-1 text-red-600 hover:text-red-800 transition px-3 py-2 rounded-lg hover:bg-red-50"
               >
                 <LogOut className="h-5 w-5" />
-                <span>Cerrar Sesión</span>
+                <span>{t("auth.logout")}</span>
               </button>
             </>
           )}

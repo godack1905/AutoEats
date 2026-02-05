@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   format, 
   startOfMonth, 
@@ -9,15 +9,22 @@ import {
   addMonths, 
   subMonths,
   startOfWeek,
-  endOfWeek,
-  addDays
+  endOfWeek
 } from 'date-fns';
-import { es } from 'date-fns/locale';
+
 import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { useMealPlanStore } from '../store/mealPlanStore';
 import { useRecipeStore } from '../store/recipeStore';
-import MealPlanModal from '../components/MealPlanModal';
-import AIGenerateModal from '../components/AIGenerateModal';
+import MealPlanModal from '../components/ai/MealPlanModal';
+import AIGenerateModal from '../components/ai/AIGenerateModal';
+
+import { useTranslation } from "react-i18next";
+import { es, enUS } from 'date-fns/locale';
+
+const locales = {
+  en: enUS,
+  es: es,
+};
 
 const CalendarPage = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -25,6 +32,9 @@ const CalendarPage = () => {
   const [showAIGenerate, setShowAIGenerate] = useState(false);
   const { mealPlans, fetchMealPlans, upsertMealPlan } = useMealPlanStore();
   const { recipes, fetchRecipes } = useRecipeStore();
+  const { t, i18n } = useTranslation();
+  const lang = (i18n.language || '').split('-')[0] as keyof typeof locales;
+  const dfLocale = locales[lang] ?? es;
 
   useEffect(() => {
     // Load meal plans for current month +/- 1 month to have some buffer
@@ -34,20 +44,20 @@ const CalendarPage = () => {
     fetchRecipes(); // Load recipes for AI generation
   }, [currentMonth, fetchMealPlans, fetchRecipes]);
 
-  // Obtener las semanas del mes
+  // Get weeks in the current month for calendar display
   const getCalendarWeeks = () => {
     const monthStart = startOfMonth(currentMonth);
     const monthEnd = endOfMonth(currentMonth);
     
-    // Empezar desde el lunes de la semana que contiene el primer día del mes
+    // Beginning of the week is monday
     const calendarStart = startOfWeek(monthStart, { weekStartsOn: 1 });
-    // Terminar en el domingo de la semana que contiene el último día del mes
+    // End of the week is sunday
     const calendarEnd = endOfWeek(monthEnd, { weekStartsOn: 1 });
     
-    // Obtener todos los días del rango calendario
+    // Obtain all days in the interval
     const calendarDays = eachDayOfInterval({ start: calendarStart, end: calendarEnd });
     
-    // Dividir en semanas (arrays de 7 días)
+    // Group days into weeks
     const weeks = [];
     for (let i = 0; i < calendarDays.length; i += 7) {
       weeks.push(calendarDays.slice(i, i + 7));
@@ -77,26 +87,24 @@ const CalendarPage = () => {
   };
 
   const handleAIGenerate = async (mealPlans) => {
-    console.log('handleAIGenerate called with:', mealPlans);
     try {
-      // Guardar cada plan de comida
+      // Save each meal plan
       const promises = Object.entries(mealPlans).map(([date, meals]) => {
-        console.log('Saving meal plan for date:', date, meals);
         return upsertMealPlan({ date, meals });
       });
       
       await Promise.all(promises);
       
-      // Recargar los meal plans
+      // Reload meal plans
       const start = format(subMonths(currentMonth, 1), 'yyyy-MM-dd');
       const end = format(addMonths(currentMonth, 1), 'yyyy-MM-dd');
       fetchMealPlans(start, end);
       
       setShowAIGenerate(false);
-      alert(`¡Plan generado exitosamente para ${Object.keys(mealPlans).length} día(s)!`);
+      alert(t("calendar.aiSuccess", { days: Object.keys(mealPlans).length }));
     } catch (error) {
       console.error('Error saving meal plans:', error);
-      alert('Error al guardar el plan. Inténtalo de nuevo.');
+      alert(t("calendar.aiError"));
     }
   };
 
@@ -105,17 +113,16 @@ const CalendarPage = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold text-gray-900">Planificación de Comidas</h1>
+        <h1 className="text-3xl font-bold text-gray-900">{t("calendar.title")}</h1>
         <div className="flex items-center space-x-4">
           <button
             onClick={() => {
-              console.log('Plan IA button clicked');
               setShowAIGenerate(true);
             }}
             className="flex items-center space-x-2 px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600"
           >
             <Sparkles className="w-5 h-5" />
-            <span>Plan IA</span>
+            <span>{t("calendar.aiPlan")}</span>
           </button>
           <div className="flex items-center space-x-4">
             <button
@@ -125,7 +132,7 @@ const CalendarPage = () => {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <h2 className="text-xl font-semibold text-gray-700">
-              {format(currentMonth, 'MMMM yyyy', { locale: es })}
+              {format(currentMonth, 'MMMM yyyy', { locale: dfLocale  })}
             </h2>
             <button
               onClick={handleNextMonth}
@@ -139,7 +146,7 @@ const CalendarPage = () => {
 
       <div className="bg-white rounded-xl shadow-md p-8">
         <div className="grid grid-cols-7 gap-2 mb-4">
-          {['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].map(day => (
+          {t("calendar.weekdays", { returnObjects: true }).map(day => (
             <div key={day} className="p-4 text-center text-sm font-medium text-gray-500">
               {day}
             </div>
@@ -172,11 +179,11 @@ const CalendarPage = () => {
                         {Object.entries(mealPlan.meals).map(([mealType, meals]) =>
                           meals.length > 0 && (
                             <div key={mealType} className="text-xs text-gray-600 truncate">
-                              {mealType === 'breakfast' && 'D'}
-                              {mealType === 'snack' && 'A'}
-                              {mealType === 'lunch' && 'C'}
-                              {mealType === 'afternoonSnack' && 'M'}
-                              {mealType === 'dinner' && 'N'}
+                              {mealType === 'breakfast' && t("calendar.mealType.breakfast")}
+                              {mealType === 'snack' && t("calendar.mealType.snack")}
+                              {mealType === 'lunch' && t("calendar.mealType.lunch")}
+                              {mealType === 'afternoonSnack' && t("calendar.mealType.afternoonSnack")}
+                              {mealType === 'dinner' && t("calendar.mealType.dinner")}
                               : {meals.map(m => m.recipe?.title || 'Receta').slice(0, 2).join(', ')}{meals.length > 2 ? '...' : ''}
                             </div>
                           )
@@ -201,7 +208,6 @@ const CalendarPage = () => {
       {showAIGenerate && (
         <AIGenerateModal
           onClose={() => {
-            console.log('Closing AI modal');
             setShowAIGenerate(false);
           }}
           onGenerate={handleAIGenerate}

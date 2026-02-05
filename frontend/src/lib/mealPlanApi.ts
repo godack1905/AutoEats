@@ -7,7 +7,7 @@ export interface Meal {
     imageUrl?: string;
     servings: number;
     prepTime?: number;
-    difficulty: 'Fácil' | 'Media' | 'Difícil';
+    difficulty: 'easy' | 'medium' | 'difficult';
   };
   people: number;
   notes: string;

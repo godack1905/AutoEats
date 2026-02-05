@@ -1,4 +1,3 @@
-// hooks/useIngredientSearch.ts
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
@@ -22,31 +21,29 @@ export const useIngredientSearch = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/ingredients?query=${encodeURIComponent(query)}&lang=es&limit=5`
+        `${import.meta.env.VITE_API_URL}/api/ingredients?query=${encodeURIComponent(query)}`
       );
 
-      if (response.data.success && response.data.ingredients) {
-        const mappedSuggestions = response.data.ingredients.map((ing: any) => {
-          // Siempre usar el ID como valor principal para enviar al backend
-          const id = ing.id;
-          // Mostrar nombre en la UI
-          const name = ing.names?.es || ing.names?.en || id;
-          const allowedMeasures = ing.allowedMeasures || [{ name: 'g' }];
+      if (response.data.success && response.data.data.ingredients) {
+        const mappedSuggestions = response.data.data.ingredients.map((ing: any) => {
+          // Show the name and allowed measures
+          const name = ing.name;
+          const allowedMeasures = ing.allowedMeasures;
 
-          return { id, name, allowedMeasures };
+          return { name, allowedMeasures };
         });
 
         setSuggestions(mappedSuggestions);
       }
     } catch (error) {
-      console.error('Error buscando ingredientes:', error);
+      console.error('Error:', error);
       setSuggestions([]);
     } finally {
       setLoading(false);
     }
   }, []);
 
-  // Actualizamos search cada vez que el usuario escribe
+  // Update suggestions when searchTerm changes
   useEffect(() => {
     const timer = setTimeout(() => {
       if (searchTerm) searchIngredients(searchTerm);

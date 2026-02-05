@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Home, Calendar, BookOpen, PlusCircle, Settings } from 'lucide-react';
+import { Calendar, BookOpen, PlusCircle } from 'lucide-react';
+import { t } from 'i18next';
 
 const Sidebar: React.FC = () => {
   const navItems = [
-    { to: '/', icon: Home, label: 'Inicio', end: true},
-    { to: '/recipes', icon: BookOpen, label: 'Recetas', end: true},
-    { to: '/new-recipe', icon: PlusCircle, label: 'Nueva Receta' },
-    { to: '/calendar', icon: Calendar, label: 'Planificación' }
+    { to: '/recipes', icon: BookOpen, label: t("recipes"), end: true},
+    { to: '/new-recipe', icon: PlusCircle, label: t("recipe.createRecipe") },
+    { to: '/calendar', icon: Calendar, label: t("calendar.calendar") }
   ];
 
   return (

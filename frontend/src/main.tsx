@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { useAuthStore } from './store/authStore';
-import './index.css';
+import React, { useEffect, Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { useAuthStore } from "./store/authStore";
+import "./index.css";
+import "./i18n";
 
-// Componente wrapper para inicializar la autenticación
+import { t } from "i18next";
+
 const AppWrapper = () => {
   const { initializeAuth, initialLoading } = useAuthStore();
 
@@ -13,14 +15,20 @@ const AppWrapper = () => {
   }, [initializeAuth]);
 
   if (initialLoading) {
-    return <div className="flex items-center justify-center h-screen">Cargando...</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        {t("loading")}
+      </div>
+    );
   }
 
   return <App />;
 };
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <AppWrapper />
+    <Suspense>
+      <AppWrapper />
+    </Suspense>
   </React.StrictMode>
 );

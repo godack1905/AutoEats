@@ -3,6 +3,7 @@ import { persist } from 'zustand/middleware';
 import { authApi } from '../lib/authApi';
 import api from '../lib/api';
 import toast from 'react-hot-toast';
+import { t } from 'i18next';
 
 interface User {
   id: string;
@@ -84,9 +85,9 @@ export const useAuthStore = create<AuthState>()(
             loading: false,
             initialLoading: false,
           });
-          toast.success('¡Inicio de sesión exitoso!');
+          toast.success(t("login.success"));
         } catch (error: any) {
-          const message = error.response?.data?.data?.originalMessage || 'Error al iniciar sesión';
+          const message = error.response?.data?.data?.originalMessage ;
           set({ error: message, loading: false, initialLoading: false });
           toast.error(message);
         }
@@ -97,9 +98,9 @@ export const useAuthStore = create<AuthState>()(
         try {
           await authApi.register({ username, email, password });
           set({ loading: false });
-          toast.success('¡Registro exitoso! Ahora puedes iniciar sesión.');
+          toast.success(t("register.success"));
         } catch (error: any) {
-          const message = error.response?.data?.data?.originalMessage || 'Error al registrar';
+          const message = error.response?.data?.data?.originalMessage;
           set({ error: message, loading: false });
           toast.error(message);
         }
@@ -113,14 +114,12 @@ export const useAuthStore = create<AuthState>()(
           token: null,
           isAuthenticated: false,
         });
-        toast.success('Sesión cerrada');
       },
 
       clearError: () => set({ error: null }),
     }),
     {
       name: 'auth-storage',
-      // Solo persistir estos campos
       partialize: (state) => ({
         user: state.user,
         token: state.token,

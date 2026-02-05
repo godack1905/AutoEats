@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 import type { Recipe, CreateRecipeData } from '../lib/recipesApi';
 import { recipesApi } from '../lib/recipesApi';
-import { useAuthStore } from './authStore';
 import toast from 'react-hot-toast';
+import { t } from 'i18next';
 
 interface RecipeState {
   recipes: Recipe[];
@@ -13,11 +13,11 @@ interface RecipeState {
   
   // Actions
   fetchRecipes: (search?: string) => Promise<void>;
-  fetchRecipeById: (id: string) => Promise<Recipe | null>; // Cambiado para devolver Recipe
+  fetchRecipeById: (id: string) => Promise<Recipe | null>;
   fetchFavorites: () => Promise<void>;
   createRecipe: (data: CreateRecipeData) => Promise<Recipe>;
   updateRecipe: (id: string, data: Partial<CreateRecipeData>) => Promise<Recipe>;
-  deleteRecipe: (id: string) => Promise<boolean>; // Ahora devuelve boolean
+  deleteRecipe: (id: string) => Promise<boolean>;
   toggleFavorite: (id: string) => Promise<void>;
   isFavorite: (id: string) => boolean;
   clearCurrentRecipe: () => void;
@@ -40,7 +40,7 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         loading: false 
       });
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al cargar recetas';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
     }
@@ -53,10 +53,10 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
       set({ currentRecipe: response.data, loading: false });
       return response.data;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al cargar receta';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
-      return null; // Devuelve null en caso de error
+      return null;
     }
   },
 
@@ -73,7 +73,7 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         loading: false 
       });
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al cargar favoritos';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
     }
@@ -87,10 +87,10 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         recipes: [recipe, ...state.recipes],
         loading: false 
       }));
-      toast.success('Receta creada exitosamente');
+      toast.success(t("recipe.createdSuccess"));
       return recipe;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al crear receta';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
       throw error;
@@ -106,10 +106,10 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         currentRecipe: recipe,
         loading: false
       }));
-      toast.success('Receta actualizada exitosamente');
+      toast.success(t("recipe.updateSuccess"));
       return recipe;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al actualizar receta';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
       throw error;
@@ -125,13 +125,13 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         currentRecipe: state.currentRecipe?.id === id ? null : state.currentRecipe,
         loading: false
       }));
-      toast.success('Receta eliminada exitosamente');
-      return true; // Devuelve true si fue exitoso
+      toast.success(t("recipe.deleteSuccess"));
+      return true;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al eliminar receta';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
-      return false; // Devuelve false si hubo error
+      return false;
     }
   },
 
@@ -144,9 +144,9 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
         : [];
       
       set({ favorites: favoriteIds });
-      toast.success(response.message || 'Favoritos actualizados');
+      toast.success(response.message || t("recipe.favoritesUpdated"));
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al actualizar favoritos';
+      const message = error.response?.data?.data?.originalMessage;
       toast.error(message);
     }
   },

@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { MealPlan, CreateMealPlanData } from '../lib/mealPlanApi';
 import { mealPlanApi } from '../lib/mealPlanApi';
 import toast from 'react-hot-toast';
+import { t } from 'i18next';
 
 interface MealPlanState {
   mealPlans: MealPlan[];
@@ -32,7 +33,7 @@ export const useMealPlanStore = create<MealPlanState>((set, get) => ({
         loading: false 
       });
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al cargar planes de comida';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
     }
@@ -49,10 +50,10 @@ export const useMealPlanStore = create<MealPlanState>((set, get) => ({
         ).concat(state.mealPlans.some(plan => plan.date === newMealPlan.date) ? [] : [newMealPlan]),
         loading: false
       }));
-      toast.success('Plan de comida guardado exitosamente');
+      toast.success(t("mealPlan.createSuccess"));
       return newMealPlan;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al guardar plan de comida';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
       throw error;
@@ -67,10 +68,10 @@ export const useMealPlanStore = create<MealPlanState>((set, get) => ({
         mealPlans: state.mealPlans.filter(plan => plan.date !== date),
         loading: false
       }));
-      toast.success('Plan de comida eliminado exitosamente');
+      toast.success(t("mealPlan.deleteSucces"));
       return true;
     } catch (error: any) {
-      const message = error.response?.data?.data?.originalMessage || 'Error al eliminar plan de comida';
+      const message = error.response?.data?.data?.originalMessage;
       set({ error: message, loading: false });
       toast.error(message);
       return false;

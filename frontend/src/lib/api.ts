@@ -10,10 +10,10 @@ const api = axios.create({
   },
 });
 
-// Interceptor para agregar token automáticamente
+// Interceptor for adding token
 api.interceptors.request.use(
   (config) => {
-    // Obtener token desde store o localStorage
+    // Obtain token
     const token = useAuthStore.getState().token || localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -23,20 +23,19 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Interceptor para manejar errores
+// Interceptor for error managing
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Si es 401, cerrar sesión
+    // 401 -> log out
     if (error.response?.status === 401) {
       useAuthStore.getState().logout();
     }
 
-    // Normalizar mensaje de error para los stores
+    // Normalize error
     const message =
-      error.response?.data?.error || // backend manda { error: '...' }
-      error.response?.data?.data?.originalMessage || // tu antiguo throwApiError
-      'Error desconocido';
+      error.response?.data?.error ||
+      error.response?.data?.data?.originalMessage
 
     return Promise.reject({ ...error, message });
   }

@@ -3,33 +3,31 @@ import api from './api';
 export interface IngredientData {
   id: string;
   categoria: string;
-  names: {
-    es: string;
-    en: string;
-  };
-  allowedUnits: string[];
+  name: string;
+  standardUnit: string;
+  allowedMeasures: string[];
 }
 
 export const ingredientsApi = {
-  // Buscar ingredientes
-  search: async (query: string, lang: 'es' | 'en' = 'es') => {
-    const response = await api.get('/api/ingredients', { params: { query, lang } });
+  // Search ingredients
+  search: async (query: string) => {
+    const response = await api.get('/api/ingredients', { params: { query } });
     return response.data;
   },
 
-  // Obtener todos los ingredientes
-  getAll: async (lang: 'es' | 'en' = 'es') => {
-    const response = await api.get('/api/ingredients', { params: { lang } });
+  // Get all ingredients
+  getAll: async () => {
+    const response = await api.get('/api/ingredients');
     return response.data;
   },
 
-  // Obtener por ID
-  getById: async (id: string) => {
-    const response = await api.get(`/api/ingredients/${id}`);
+  // Obtain by name
+  getByName: async (name: string) => {
+    const response = await api.get(`/api/ingredients/${name}`);
     return response.data;
   },
 
-  // Obtener por categoría
+  // Obtain by category
   getByCategory: async (category: string) => {
     const response = await api.get(`/api/ingredients/category/${category}`);
     return response.data;

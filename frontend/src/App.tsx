@@ -16,11 +16,13 @@ import Calendar from './pages/CalendarPage.jsx';
 // Layout
 import Layout from './components/ui/Layout';
 
-// Componente para rutas protegidas
+import { useTranslation } from 'react-i18next';
+
+// Protected route component
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isAuthenticated, loading } = useAuthStore();
   
-  // Muestra un loader mientras se verifica la autenticación
+  // Show loading state while checking authentication
   if (loading) {
     return <div className="flex items-center justify-center h-screen">Cargando...</div>;
   }
@@ -36,31 +38,31 @@ function App() {
   const { isAuthenticated, loading } = useAuthStore();
   const { fetchFavorites } = useRecipeStore();
   const [isInitialized, setIsInitialized] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
-    // Solo ejecutar fetchFavorites si estamos autenticados
+    // Only fetch favorites after authentication is confirmed
     if (isAuthenticated && !loading) {
-      console.log('🔐 Usuario autenticado, cargando favoritos...');
       fetchFavorites().catch(error => {
-        console.error('Error cargando favoritos:', error);
+        console.error('Error fetching favorites:', error);
       });
     }
   }, [isAuthenticated, loading, fetchFavorites]);
 
-  // Si estamos cargando inicialmente, mostrar loader
+  // If still loading auth state on initial app load
   if (loading && !isInitialized) {
-    return <div className="flex items-center justify-center h-screen">Cargando aplicación...</div>;
+    return <div className="flex items-center justify-center h-screen">{t("loadingApp")}</div>;
   }
 
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
         <Routes>
-          {/* Rutas públicas */}
+          {/* Public routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           
-          {/* Rutas protegidas */}
+          {/* Protected routes */}
           <Route path="/" element={
             <ProtectedRoute>
               <Recipes />

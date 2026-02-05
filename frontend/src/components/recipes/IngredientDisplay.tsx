@@ -3,6 +3,8 @@ import { Package, AlertCircle, Loader } from 'lucide-react';
 import { useIngredients } from '../../hooks/useIngredients';
 import type { IngredientData } from '../../lib/ingredientsApi';
 
+import { t } from "i18next";
+
 interface IngredientDisplayProps {
   ingredient: {
     ingredient: string;
@@ -22,7 +24,7 @@ const IngredientDisplay: React.FC<IngredientDisplayProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-  const { fetchIngredientById, getIngredientName, getIngredientCategory } = useIngredients();
+  const { fetchIngredientByName, getIngredientCategory } = useIngredients();
 
   useEffect(() => {
     const loadIngredient = async () => {
@@ -30,28 +32,20 @@ const IngredientDisplay: React.FC<IngredientDisplayProps> = ({
         setLoading(true);
         const id = ingredient.ingredient;
         
-        // Si es un ID numérico, buscar por ID
-        if (id.match(/^\d{6}$/)) {
-          const info = await fetchIngredientById(id);
-          setIngredientInfo(info);
-        } else {
-          // Si es un nombre, intentamos encontrar por nombre
-          // (esto es para compatibilidad con datos antiguos)
-          console.log(`ℹ️ Ingrediente por nombre: "${id}"`);
-          setIngredientInfo(null);
-        }
+        const info = await fetchIngredientByName(id);
+        setIngredientInfo(info);
+        
       } catch (err) {
-        console.error(`❌ Error loading ingredient ${ingredient.ingredient}:`, err);
-        setError('Error al cargar ingrediente');
+        console.error(`Error loading ingredient ${ingredient.ingredient}:`, err);
       } finally {
         setLoading(false);
       }
     };
 
     loadIngredient();
-  }, [ingredient.ingredient, fetchIngredientById]);
+  }, [ingredient.ingredient, fetchIngredientByName]);
 
-  const displayName = getIngredientName(ingredient.ingredient);
+  const displayName = t(`ingredient.names.${ingredient.ingredient}`);
   const category = getIngredientCategory(ingredient.ingredient);
 
   return (
@@ -76,10 +70,10 @@ const IngredientDisplay: React.FC<IngredientDisplayProps> = ({
               </span>
             </div>
             
-            {/* Información adicional */}
+            {/* Additional Info */}
             <div className="mt-1 flex flex-wrap items-center gap-2">
               {loading ? (
-                <span className="text-xs text-gray-400">Cargando...</span>
+                <span className="text-xs text-gray-400">{t("loading")}</span>
               ) : error ? (
                 <span className="text-xs text-red-600 bg-red-50 px-2 py-0.5 rounded flex items-center">
                   <AlertCircle className="h-3 w-3 mr-1" />
@@ -87,16 +81,9 @@ const IngredientDisplay: React.FC<IngredientDisplayProps> = ({
                 </span>
               ) : (
                 <>
-                  {showCategory && category && category !== 'Sin categoría' && (
+                  {showCategory && category && category !== '' && (
                     <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded">
                       {category}
-                    </span>
-                  )}
-                  
-                  {/* Mostrar ID para debugging */}
-                  {ingredient.ingredient.match(/^\d{6}$/) && (
-                    <span className="text-xs text-gray-400 font-mono">
-                      ID: {ingredient.ingredient}
                     </span>
                   )}
                 </>

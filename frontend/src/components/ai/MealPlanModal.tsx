@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { X, Plus, Trash2, Edit } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
-import { useMealPlanStore } from '../store/mealPlanStore';
-import { useRecipeStore } from '../store/recipeStore';
-import RecipeSelector from '../components/RecipeSelector';
+import { useMealPlanStore } from '../../store/mealPlanStore';
+import { useRecipeStore } from '../../store/recipeStore';
+import RecipeSelector from '../recipes/RecipeSelector';
+import { t } from 'i18next';
 
 interface MealPlanModalProps {
   date: Date;
@@ -25,17 +26,17 @@ interface MealsData {
   dinner: Meal[];
 }
 
-const mealTypes = [
-  { key: 'breakfast', label: 'Desayuno' },
-  { key: 'snack', label: 'Merienda Mañana' },
-  { key: 'lunch', label: 'Almuerzo' },
-  { key: 'afternoonSnack', label: 'Merienda Tarde' },
-  { key: 'dinner', label: 'Cena' },
-];
-
 const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
   const { mealPlans, upsertMealPlan, deleteMealPlan, loading } = useMealPlanStore();
   const { recipes, fetchRecipes } = useRecipeStore();
+
+  const mealTypes = [
+    { key: 'breakfast', label: t("mealPlan.breakfast") },
+    { key: 'snack', label: t("mealPlan.snack") },
+    { key: 'lunch', label: t("mealPlan.lunch") },
+    { key: 'afternoonSnack', label: t("mealPlan.afternoonSnack") },
+    { key: 'dinner', label: t("mealPlan.dinner") },
+  ];
 
   const [meals, setMeals] = useState<MealsData>({
     breakfast: [],
@@ -78,7 +79,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
       };
       setMeals(emptyMeals);
       setOriginalMeals(null);
-      setIsEditing(true); // Si no hay plan, empezar en edición
+      setIsEditing(true);
     }
   }, [date, mealPlans]);
 
@@ -118,7 +119,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
   };
 
   const handleDeletePlan = async () => {
-    if (confirm('¿Estás seguro de que quieres eliminar todo el plan de comida de este día?')) {
+    if (confirm(t("mealPlan.deleteConfirm"))) {
       await deleteMealPlan(format(date, 'yyyy-MM-dd'));
       onClose();
     }
@@ -133,14 +134,13 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
         meals: Object.fromEntries(
           Object.entries(meals).map(([key, value]) => [
             key,
-            value.filter(meal => meal.recipe) // Solo incluir meals con receta
+            value.filter(meal => meal.recipe)
           ])
         )
       });
       setIsEditing(false);
       setOriginalMeals(meals);
     } catch (error) {
-      // Error ya manejado en el store
     }
   };
 
@@ -154,7 +154,9 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
       <div className="bg-white rounded-xl shadow-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="flex justify-between items-center p-6 border-b">
           <h2 className="text-2xl font-bold text-gray-900">
-            Plan de comida para {format(date, 'EEEE, d \'de\' MMMM \'de\' yyyy', { locale: es })}
+            {t("mealPlan.title", { 
+              date: format(date, 'EEEE, d \'de\' MMMM \'de\' yyyy', { locale: es })
+            })}
           </h2>
           <div className="flex items-center space-x-2">
             {hasMeals && !isEditing && (
@@ -162,14 +164,14 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                 <button
                   onClick={handleEdit}
                   className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
-                  title="Editar"
+                  title={t("mealPlan.edit")}
                 >
                   <Edit className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleDeletePlan}
                   className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
-                  title="Eliminar plan completo"
+                  title={t("mealPlan.deletePlan")}
                 >
                   <Trash2 className="w-5 h-5" />
                 </button>
@@ -186,7 +188,6 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
 
         <div className="p-6">
           {isEditing ? (
-            // Modo edición
             <div className="space-y-6">
               {mealTypes.map(({ key, label }) => (
                 <div key={key} className="border rounded-lg p-4">
@@ -197,7 +198,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                       className="flex items-center space-x-2 px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
                     >
                       <Plus className="w-4 h-4" />
-                      <span>Agregar</span>
+                      <span>{t("mealPlan.add")}</span>
                     </button>
                   </div>
 
@@ -212,7 +213,9 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                           />
                           <div className="flex space-x-2">
                             <div className="flex-1">
-                              <label className="block text-sm font-medium text-gray-700">Personas</label>
+                              <label className="block text-sm font-medium text-gray-700">
+                                {t("mealPlan.people")}
+                              </label>
                               <input
                                 type="number"
                                 min="1"
@@ -223,12 +226,14 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                               />
                             </div>
                             <div className="flex-1">
-                              <label className="block text-sm font-medium text-gray-700">Notas</label>
+                              <label className="block text-sm font-medium text-gray-700">
+                                {t("mealPlan.notes")}
+                              </label>
                               <input
                                 type="text"
                                 value={meal.notes}
                                 onChange={(e) => handleMealChange(key as keyof MealsData, index, 'notes', e.target.value)}
-                                placeholder="Notas opcionales"
+                                placeholder={t("mealPlan.notesPlaceholder")}
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                               />
                             </div>
@@ -243,14 +248,15 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                       </div>
                     ))}
                     {meals[key as keyof MealsData].length === 0 && (
-                      <p className="text-gray-500 text-center py-4">No hay comidas planificadas</p>
+                      <p className="text-gray-500 text-center py-4">
+                        {t("mealPlan.noMealsPlanned")}
+                      </p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
           ) : (
-            // Modo vista
             <div className="space-y-6">
               {hasMeals ? (
                 mealTypes.map(({ key, label }) => {
@@ -266,10 +272,16 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                           return <div key={index} className="p-3 bg-gray-50 rounded-lg">
                             <div className="flex justify-between items-start">
                               <div className="flex-1">
-                                <h4 className="font-medium text-gray-900">{recipeObj?.title || 'Receta no encontrada'}</h4>
-                                <p className="text-sm text-gray-600">Para {meal.people} persona{meal.people !== 1 ? 's' : ''}</p>
+                                <h4 className="font-medium text-gray-900">
+                                  {recipeObj?.title || t("mealPlan.recipeNotFound")}
+                                </h4>
+                                <p className="text-sm text-gray-600">
+                                  {t("mealPlan.forPeople", { people: meal.people })}
+                                </p>
                                 {meal.notes && (
-                                  <p className="text-sm text-gray-500 mt-1">Nota: {meal.notes}</p>
+                                  <p className="text-sm text-gray-500 mt-1">
+                                    {t("mealPlan.note")}: {meal.notes}
+                                  </p>
                                 )}
                               </div>
                             </div>
@@ -281,12 +293,14 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                 })
               ) : (
                 <div className="text-center py-12">
-                  <p className="text-gray-500 mb-4">No hay comidas planificadas para este día</p>
+                  <p className="text-gray-500 mb-4">
+                    {t("mealPlan.noMealsForDay")}
+                  </p>
                   <button
                     onClick={() => setIsEditing(true)}
                     className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
                   >
-                    Agregar comidas
+                    {t("mealPlan.addMeals")}
                   </button>
                 </div>
               )}
@@ -301,14 +315,14 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
                 onClick={handleCancel}
                 className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
               >
-                Cancelar
+                {t("mealPlan.cancel")}
               </button>
               <button
                 onClick={handleSave}
                 disabled={loading || !hasChanges()}
                 className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Guardando...' : 'Guardar'}
+                {loading ? t("mealPlan.saving") : t("mealPlan.save")}
               </button>
             </>
           ) : (
@@ -316,7 +330,7 @@ const MealPlanModal: React.FC<MealPlanModalProps> = ({ date, onClose }) => {
               onClick={onClose}
               className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
             >
-              Cerrar
+              {t("mealPlan.close")}
             </button>
           )}
         </div>

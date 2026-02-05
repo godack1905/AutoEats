@@ -67,6 +67,7 @@ export const MESSAGE_CODES = {
 
     INDGREDIENT_NOT_FOUND: 'INDGREDIENT_NOT_FOUND',
     INGREDIENTS_FETCHED: 'INGREDIENTS_FETCHED',
+    UNIT_NOT_VALID: 'UNIT_NOT_VALID',
 
 
     /* ---------------------------------- */
@@ -92,7 +93,7 @@ export const MESSAGE_CODES = {
     FRIDAY: 'FRIDAY',
     SATURDAY: 'SATURDAY',
 
-    EASY: 'EASY',
-    MEDIUM: 'MEDIUM',
-    HARD: 'HARD'
+    EASY: 'easy',
+    MEDIUM: 'medium',
+    HARD: 'hard'
 };
