@@ -184,17 +184,31 @@ export const deleteRecipe = async (req, res, next) => {
 
 export const getUserFavorites = async (req, res, next) => {
   try {
-    const user = await User.findById(req.user.id).populate('favorites');
-    
-    return sendSuccess(res, MESSAGE_CODES.USER_FAVORITES_RETRIEVED, { favorites: user.favorites });
+    const user = await User.findById(req.user.id).populate({
+      path: "favorites",
+      match: {
+        $or: [
+          { isPublic: true },
+          { createdBy: req.user.id }
+        ]
+      }
+    });
+
+    return sendSuccess(
+      res,
+      MESSAGE_CODES.USER_FAVORITES_RETRIEVED,
+      { favorites: user.favorites }
+    );
   } catch (err) {
-    if (err instanceof ApiError) 
-      return next(err);
+    if (err instanceof ApiError) return next(err);
 
     console.error("Error in getUserFavorites:", err);
-    throwApiError(500, MESSAGE_CODES.INTERNAL_ERROR, { originalMessage: err.message });
+    throwApiError(500, MESSAGE_CODES.INTERNAL_ERROR, {
+      originalMessage: err.message
+    });
   }
 };
+
 
 export const toggleFavorite = async (req, res, next) => {
   try {
