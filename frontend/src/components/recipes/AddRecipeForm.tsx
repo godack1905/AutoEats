@@ -14,8 +14,7 @@ import {
   Check,
   Edit2,
   CheckCircle,
-  XCircle,
-  Info
+  XCircle
 } from 'lucide-react';
 import { useRecipeStore } from '../../store/recipeStore';
 import { useAuthStore } from '../../store/authStore';
@@ -27,7 +26,9 @@ import {
 } from '../../constants/mealTags';
 import toast from 'react-hot-toast';
 
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+import enTranslations from '../../../public/locales/en/translation.json';
+import esTranslations from '../../../public/locales/es/translation.json';
 
 // Define type for measure option
 interface MeasureOption {
@@ -41,12 +42,10 @@ interface IngredientWithMeasures extends Omit<IngredientData, 'allowedMeasures'>
   allowedMeasures?: MeasureOption[];
 }
 
-// Normalize API ingredient shape to `IngredientWithMeasures`
-const normalizeIngredient = (ing: IngredientData): IngredientWithMeasures => ({
-  ...ing,
-  // API currently returns allowedMeasures: string[]; map to MeasureOption[]
-  allowedMeasures: (ing.allowedMeasures || []).map((m: any) => typeof m === 'string' ? { name: m } as MeasureOption : (m as MeasureOption))
-});
+// Extend IngredientData to include displayName
+interface IngredientWithDisplay extends IngredientData {
+  displayName?: string;
+}
 
 // Define interface for form ingredient
 interface FormIngredient {
@@ -58,6 +57,14 @@ interface FormIngredient {
   displayQuantity: string;
 }
 
+// Normalize API ingredient shape to `IngredientWithMeasures`
+const normalizeIngredient = (ing: IngredientData): IngredientWithMeasures => ({
+  ...ing,
+  allowedMeasures: (ing.allowedMeasures || []).map((m: any) => 
+    typeof m === 'string' ? { name: m } as MeasureOption : (m as MeasureOption)
+  )
+});
+
 const AddRecipeForm = () => {
   const navigate = useNavigate();
   const { createRecipe } = useRecipeStore();
@@ -65,6 +72,8 @@ const AddRecipeForm = () => {
   const ingredientInputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
   const tagInputRef = useRef<HTMLInputElement>(null);
+  
+  const { t, i18n } = useTranslation();
   
   const [formData, setFormData] = useState({
     title: '',
@@ -78,7 +87,7 @@ const AddRecipeForm = () => {
     tags: [] as string[]
   });
 
-  const [suggestedIngredients, setSuggestedIngredients] = useState<IngredientData[]>([]);
+  const [suggestedIngredients, setSuggestedIngredients] = useState<IngredientWithDisplay[]>([]);
   const [searchIngredient, setSearchIngredient] = useState('');
   const [currentIngredient, setCurrentIngredient] = useState({
     ingredient: '',
@@ -95,7 +104,36 @@ const AddRecipeForm = () => {
   const [showTagSuggestions, setShowTagSuggestions] = useState(false);
   const [filteredTags, setFilteredTags] = useState<string[]>(() => [...MEAL_TYPE_TAGS]);
 
-  
+  // Get current language (es or en)
+  const currentLang = i18n.language?.split('-')[0] || 'en';
+
+  // Map visibleWord -> id
+  const generateMap = (namesObj: Record<string, string>) => {
+    const map: Record<string, string> = {};
+    if (!namesObj) return map;
+    
+    Object.entries(namesObj).forEach(([key, visibleName]) => {
+      if (visibleName && typeof visibleName === 'string') {
+        map[visibleName.toLowerCase()] = key;
+      }
+    });
+    return map;
+  };
+
+  const mapEnVisibleToKey = generateMap(enTranslations?.ingredient?.names || {});
+  const mapEsVisibleToKey = generateMap(esTranslations?.ingredient?.names || {});
+
+  const mapByLang: Record<string, Record<string, string>> = {
+    en: mapEnVisibleToKey,
+    es: mapEsVisibleToKey,
+  };
+
+  // Get display name from key
+  const getDisplayNameFromKey = (key: string): string => {
+    const translations = currentLang === 'es' ? esTranslations : enTranslations;
+    return translations?.ingredient?.names?.[key] || key;
+  };
+
   // Close ingrediente suggestions on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -137,49 +175,95 @@ const AddRecipeForm = () => {
       setFilteredTags(filtered);
       setShowTagSuggestions(true);
     } else {
-      setFilteredTags(MEAL_TYPE_TAGS.slice(0, 10)); // By default show first 10 tags
+      setFilteredTags(MEAL_TYPE_TAGS.slice(0, 10));
       setShowTagSuggestions(false);
     }
   }, [currentTag]);
 
-  // Search ingredients while typing
-  useEffect(() => {
-    const searchIngredients = async () => {
-      if (searchIngredient.trim().length < 2) {
+  // Handle search input change - CORREGIDO
+  const handleSearchChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchIngredient(value);
+    
+    if (!value.trim() || value.length < 2) {
+      setSuggestedIngredients([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    setIsSearching(true);
+    
+    try {
+      // Get the display name to key map for current language
+      const displayNameToKey = mapByLang[currentLang] || {};
+      
+      // Check if we have translations
+      if (Object.keys(displayNameToKey).length === 0) {
         setSuggestedIngredients([]);
         setShowSuggestions(false);
         return;
       }
+      
+      const searchLower = value.toLowerCase();
+      
+      // Find all keys whose display names contain the search text
+      const possibleKeys = Object.entries(displayNameToKey)
+        .filter(([displayName]) => {
+          return displayName && displayName.toLowerCase().includes(searchLower);
+        })
+        .map(([, key]) => key);
 
-      setIsSearching(true);
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/ingredients?query=${encodeURIComponent(searchIngredient)}`
+      if (possibleKeys.length > 0) {
+        // Limit to 15 keys to avoid overloading
+        const limitedKeys = possibleKeys.slice(0, 15);
+        
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/api/ingredients/search-by-keys`,
+          { keys: limitedKeys }
         );
         
         if (response.data.success && response.data.data?.ingredients) {
-          setSuggestedIngredients(response.data.data.ingredients);
+          // Map ingredients with display names
+          const mappedIngredients = response.data.data.ingredients.map((ing: IngredientData) => {
+            const displayName = getDisplayNameFromKey(ing.name);
+            
+            return {
+              ...ing,
+              displayName,
+            };
+          });
+          
+          // Sort results: first those that start with search term
+          mappedIngredients.sort((a, b) => {
+            const aStartsWith = a.displayName?.toLowerCase().startsWith(searchLower) || false;
+            const bStartsWith = b.displayName?.toLowerCase().startsWith(searchLower) || false;
+            
+            if (aStartsWith && !bStartsWith) return -1;
+            if (!aStartsWith && bStartsWith) return 1;
+            return (a.displayName || '').localeCompare(b.displayName || '');
+          });
+          
+          setSuggestedIngredients(mappedIngredients);
           setShowSuggestions(true);
         } else {
           setSuggestedIngredients([]);
+          setShowSuggestions(false);
         }
-      } catch (error) {
+      } else {
         setSuggestedIngredients([]);
-      } finally {
-        setIsSearching(false);
+        setShowSuggestions(false);
       }
-    };
+    } catch (error) {
+      console.error('Error searching ingredients:', error);
+      setSuggestedIngredients([]);
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
-    const timer = setTimeout(() => {
-      searchIngredients();
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [searchIngredient]);
-
-  // When a ingredient is selected from suggestions
-  const selectIngredient = (ingredient: IngredientData) => {
-    const ingredientWithMeasures = normalizeIngredient(ingredient);
+  // When a ingredient is selected from suggestions - CORREGIDO
+  const selectIngredient = (ingredient: IngredientWithDisplay) => {
+    const ingredientWithMeasures = normalizeIngredient(ingredient as IngredientData);
     const defaultUnit = ingredientWithMeasures.allowedMeasures?.[0]?.name || '';
     
     setCurrentIngredient(prev => ({
@@ -191,28 +275,12 @@ const AddRecipeForm = () => {
       unit: defaultUnit,
       displayQuantity: ''
     }));
-    setSearchIngredient(ingredient.name);
+    
+    // Use display name for search input
+    setSearchIngredient(ingredient.displayName || ingredient.name);
     setShowSuggestions(false);
     
-    toast.success(`${t(`ingredient.names.${ingredient.name}`)} ${t("recipe.selected")}`);
-  };
-
-  // Handle search input change
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchIngredient(value);
-    
-    if (!value.trim()) {
-      setCurrentIngredient(prev => ({
-        ...prev,
-        ingredient: '',
-        ingredientId: undefined,
-        ingredientData: null,
-        quantity: '',
-        unit: '',
-        displayQuantity: ''
-      }));
-    }
+    toast.success(`${ingredient.displayName || ingredient.name} ${t("recipe.selected")}`);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -237,15 +305,15 @@ const AddRecipeForm = () => {
     }
   };
 
-  // Obtain all measure options for the current ingredient
+  // Obtain all measure options for the current ingredient - CORREGIDO
   const getAllMeasureOptions = () => {
     const options: Array<{value: string, label: string, baseValue?: number, baseUnit?: string}> = [];
     
     if (currentIngredient.ingredientData?.allowedMeasures) {
       currentIngredient.ingredientData.allowedMeasures.forEach(measure => {
         options.push({
-          value: t(measure.name),
-          label: `${t(measure.name)}`,
+          value: measure.name,
+          label: t(`ingredient.units.${measure.name}`, { defaultValue: measure.name }),
           baseValue: measure.baseValue,
           baseUnit: measure.baseUnit
         });
@@ -255,7 +323,7 @@ const AddRecipeForm = () => {
     return options;
   };
 
-  // Add or update ingredients
+  // Add or update ingredients - CORREGIDO
   const addIngredient = () => {
     if (!currentIngredient.ingredient.trim()) {
       toast.error(t("recipe.selectIngredient"));
@@ -278,11 +346,13 @@ const AddRecipeForm = () => {
     
     if (currentIngredient.ingredientData.allowedMeasures && currentIngredient.ingredientData.allowedMeasures.length > 0) {
       const isValidUnit = currentIngredient.ingredientData.allowedMeasures.some(
-        measure => t(measure.name) === currentIngredient.unit
+        measure => measure.name === currentIngredient.unit
       );
 
       if (!isValidUnit) {
-        const allowedUnits = currentIngredient.ingredientData.allowedMeasures.map(m => t(m.name)).join(', ');
+        const allowedUnits = currentIngredient.ingredientData.allowedMeasures.map(m => 
+          t(`ingredient.units.${m.name}`, { defaultValue: m.name })
+        ).join(', ');
         toast.error(`${t("recipe.invalidUnit")} ${allowedUnits}`);
         return;
       }
@@ -329,7 +399,7 @@ const AddRecipeForm = () => {
     resetIngredientForm();
   };
 
-  // Edit existing ingredient
+  // Edit existing ingredient - CORREGIDO
   const editIngredient = (index: number) => {
     const ingredientToEdit = formData.ingredients[index];
     
@@ -341,7 +411,7 @@ const AddRecipeForm = () => {
       displayQuantity: ingredientToEdit.displayQuantity
     });
     
-    setSearchIngredient(ingredientToEdit.ingredient);
+    setSearchIngredient(getDisplayNameFromKey(ingredientToEdit.ingredient));
     setEditingIndex(index);
     setShowSuggestions(false);
     
@@ -444,16 +514,12 @@ const AddRecipeForm = () => {
         prepTime: Number(formData.prepTime),
         difficulty: formData.difficulty,
         steps: formData.steps.filter(step => step.trim() !== ''),
-        ingredients: formData.ingredients.map(ing => {
-          const baseIngredient = {
-            ingredient: ing.ingredientId || ing.ingredient,
-            quantity: Number(ing.quantity),
-            unit: ing.unit,
-            displayQuantity: ing.displayQuantity || ing.quantity.toString()
-          };
-          
-          return baseIngredient;
-        })
+        ingredients: formData.ingredients.map(ing => ({
+          ingredient: ing.ingredientId || ing.ingredient,
+          quantity: Number(ing.quantity),
+          unit: ing.unit,
+          displayQuantity: ing.displayQuantity || ing.quantity.toString()
+        }))
       };
 
       await createRecipe(recipeToSend);
@@ -643,26 +709,51 @@ const AddRecipeForm = () => {
                       )}
                     </div>
 
-                    {/* Ingredient suggestion */}
+                    {/* Ingredient suggestions - CORREGIDO */}
                     {showSuggestions && suggestedIngredients.length > 0 && (
                       <div 
                         ref={suggestionsRef}
                         className="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg max-h-64 overflow-y-auto"
                       >
-                        {suggestedIngredients.map((ing) => (
-                          <div
-                            key={ing.name}
-                            onClick={() => selectIngredient(ing)}
-                            className="px-3 py-2 hover:bg-green-50 cursor-pointer border-b border-gray-100 last:border-b-0 flex items-center justify-between"
-                          >
-                            <div>
-                              <div className="font-medium text-gray-900">{t(`ingredient.names.${ing.name}`)}</div>
+                        {suggestedIngredients.map((ing) => {
+                          const displayName = ing.displayName || ing.name;
+                          const searchTerm = searchIngredient;
+                          
+                          // Safe split with error handling
+                          let parts = [displayName];
+                          try {
+                            if (searchTerm) {
+                              const regex = new RegExp(`(${searchTerm})`, 'gi');
+                              parts = displayName.split(regex);
+                            }
+                          } catch (error) {
+                            parts = [displayName];
+                          }
+                          
+                          return (
+                            <div
+                              key={ing.name}
+                              onClick={() => selectIngredient(ing)}
+                              className="px-3 py-2 hover:bg-green-50 cursor-pointer border-b border-gray-100 last:border-b-0 flex items-center justify-between"
+                            >
+                              <div className="font-medium text-gray-900">
+                                {parts.map((part, i) => {
+                                  if (searchTerm && part.toLowerCase() === searchTerm.toLowerCase()) {
+                                    return (
+                                      <span key={i} className="bg-yellow-200 font-bold">
+                                        {part}
+                                      </span>
+                                    );
+                                  }
+                                  return <span key={i}>{part}</span>;
+                                })}
+                              </div>
+                              {currentIngredient.ingredient === ing.name && (
+                                <Check className="h-4 w-4 text-green-600" />
+                              )}
                             </div>
-                            {currentIngredient.ingredient === ing.name && (
-                              <Check className="h-4 w-4 text-green-600" />
-                            )}
-                          </div>
-                        ))}
+                          );
+                        })}
                       </div>
                     )}
                   </div>
@@ -756,7 +847,7 @@ const AddRecipeForm = () => {
               </div>
             </div>
 
-            {/* Added ingredients list */}
+            {/* Added ingredients list - CORREGIDO */}
             <div className="mt-4">
               {formData.ingredients.length === 0 ? (
                 <div className="text-center py-6 border-2 border-dashed border-gray-300 rounded-lg">
@@ -789,10 +880,10 @@ const AddRecipeForm = () => {
                         </div>
                         <div>
                           <div className="font-medium text-gray-900">
-                            {t(`ingredient.names.${ing.ingredient}`)}
+                            {getDisplayNameFromKey(ing.ingredient)}
                           </div>
                           <div className="text-sm text-gray-600">
-                            {ing.quantity} {t(`units.${ing.unit}`)}
+                            {ing.quantity} {t(`ingredient.units.${ing.unit}`, { defaultValue: ing.unit })}
                           </div>
                         </div>
                       </div>
@@ -924,14 +1015,12 @@ const AddRecipeForm = () => {
                           type="button"
                           onClick={() => {
                             if (isSelected) {
-                              // Delete tag
                               setFormData(prev => ({
                                 ...prev,
                                 tags: prev.tags.filter(t => t !== tag)
                               }));
                               toast.success(`${t("recipe.tag")} "${t(`tags.${tag}`)}" ${t("recipe.deleted")}`);
                             } else {
-                              // Add tag
                               setFormData(prev => ({
                                 ...prev,
                                 tags: [...prev.tags, tag]

@@ -40,7 +40,52 @@ router.get("/", (req, res) => {
 }
 });
 
-// Obtener ingredientes por categoría
+router.post('/search-by-keys', (req, res, next) => {
+  try {
+    const { keys } = req.body;
+    
+    console.log('Buscando ingredientes con keys:', keys); // Para debugging
+    
+    // Validar que recibimos un array de keys
+    if (!keys || !Array.isArray(keys) || keys.length === 0) {
+      return throwApiError(400, MESSAGE_CODES.BAD_REQUEST, { 
+        originalMessage: 'Se requiere un array de keys' 
+      });
+    }
+
+    // Leer el archivo JSON
+    const data = JSON.parse(fs.readFileSync(ingredientsPath, "utf-8"));
+    
+    // Filtrar ingredientes cuyas keys estén en el array recibido
+    const ingredients = data.filter(ingredient => 
+      keys.includes(ingredient.name) // Asumiendo que el campo se llama 'name'
+    );
+
+    console.log(`Encontrados ${ingredients.length} ingredientes de ${keys.length} keys buscadas`);
+
+    // Devolver los resultados
+    return sendSuccess(
+      res, 
+      MESSAGE_CODES.INGREDIENTS_FETCHED, 
+      { 
+        count: ingredients.length,
+        ingredients: ingredients,
+        searchedKeys: keys.length,
+        foundKeys: ingredients.length
+      }, 
+      200
+    );
+    
+  } catch (err) {
+    if (err instanceof ApiError)
+      return next(err);
+    
+    console.error("Error in search-by-keys:", err);
+    throwApiError(500, MESSAGE_CODES.INTERNAL_ERROR, { originalMessage: err.message });
+  }
+});
+
+// Obtain ingredients by category
 router.get("/category/:category", (req, res) => {
   try {
     const data = JSON.parse(fs.readFileSync(ingredientsPath, "utf-8"));
